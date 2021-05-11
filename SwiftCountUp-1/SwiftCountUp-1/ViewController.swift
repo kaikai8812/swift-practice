@@ -51,7 +51,7 @@ class ViewController: UIViewController {
     }
     
     func resetColor(){
-        countUpLabel.textColor = .white
+        countUpLabel.textColor = .blue
     }
     
 
