@@ -13,10 +13,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     
     var count = 0
+    
+    var name : String! = "あいうえお"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        print(name!) //強制的アンラップ,宣言する際の！とは別物
     }
     
     
