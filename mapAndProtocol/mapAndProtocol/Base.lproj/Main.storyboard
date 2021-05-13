@@ -23,6 +23,7 @@
                                 <state key="normal" title="設定"/>
                                 <connections>
                                     <action selector="aaa:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xdX-gM-CrU"/>
+                                    <action selector="goToSearchVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FkJ-ak-gKO"/>
                                 </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xJp-fg-eBh">
@@ -50,7 +51,7 @@
                         <outlet property="longPress" destination="M55-4e-6pk" id="16P-eI-Le1"/>
                         <outlet property="mapView" destination="xJp-fg-eBh" id="dor-2c-EtH"/>
                         <outlet property="settingButton" destination="3Od-8d-a3V" id="p78-qr-KZv"/>
-                        <segue destination="bbJ-13-LEd" kind="presentation" modalPresentationStyle="fullScreen" id="0Dh-jt-wuT"/>
+                        <segue destination="bbJ-13-LEd" kind="presentation" identifier="next" modalPresentationStyle="fullScreen" id="OhP-qO-dcU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

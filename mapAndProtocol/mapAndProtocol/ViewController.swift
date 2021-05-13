@@ -7,8 +7,8 @@
 
 import UIKit
 //マップを使用する時は、以下二つをimportする。どちらもデリゲートメソッドを持つ。
-import MapKit
-import CoreLocation
+import MapKit   //mapの表示関連のkit
+import CoreLocation    //mapの座標関連を取得できたりするやつ
 
 class ViewController: UIViewController, CLLocationManagerDelegate, UIGestureRecognizerDelegate {
 
@@ -32,7 +32,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIGestureReco
     }
 
     //senderの中には、何かしらの情報が入ってくる。今回は、ロングタップという処理が入っている。
-    
     @IBAction func LongPressTap(_ sender: UILongPressGestureRecognizer) {
         
         if sender.state == .began{
@@ -68,7 +67,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIGestureReco
             if let placeMark = placeMark {
                 //placeMarkは、配列？？
                 if let pm = placeMark.first{
-                    
                     //都市名か村名？が存在した場合は、以下の処理が呼ばれる。
                     if pm.administrativeArea != nil || pm.locality != nil {
                         
@@ -81,10 +79,23 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIGestureReco
                     
                 }
             }
-            
         }
-        
     }
+    
+    
+    @IBAction func goToSearchVC(_ sender: Any) {
+        
+        performSegue(withIdentifier: "next", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "next" {
+            let nextVC = segue.destination as! NextViewController
+        }
+    }
+    
+    
     
 }
 
