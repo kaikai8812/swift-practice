@@ -22,8 +22,8 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <state key="normal" title="設定"/>
                                 <connections>
-                                    <action selector="aaa:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xdX-gM-CrU"/>
                                     <action selector="goToSearchVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FkJ-ak-gKO"/>
+                                    <segue destination="bbJ-13-LEd" kind="presentation" identifier="next" modalPresentationStyle="fullScreen" id="gb0-oW-Gfj"/>
                                 </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xJp-fg-eBh">
@@ -51,7 +51,6 @@
                         <outlet property="longPress" destination="M55-4e-6pk" id="16P-eI-Le1"/>
                         <outlet property="mapView" destination="xJp-fg-eBh" id="dor-2c-EtH"/>
                         <outlet property="settingButton" destination="3Od-8d-a3V" id="p78-qr-KZv"/>
-                        <segue destination="bbJ-13-LEd" kind="presentation" identifier="next" modalPresentationStyle="fullScreen" id="OhP-qO-dcU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -101,11 +100,18 @@
                                 <state key="normal" title="OK">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="okAction:" destination="bbJ-13-LEd" eventType="touchUpInside" id="VC5-YA-0aj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vu2-cW-WmU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="idoTextField" destination="AyG-rd-06C" id="mfk-8d-6nZ"/>
+                        <outlet property="keidoTextField" destination="dDl-yg-f6M" id="dNa-1t-fUt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zov-PC-djN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

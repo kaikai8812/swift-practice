@@ -7,23 +7,44 @@
 
 import UIKit
 
+//プロトコルを作成
+protocol SearchLocationDeledate {
+    func searchLocation(idovalue:String, keidoValue:String)
+}
+
 class NextViewController: UIViewController {
 
+    
+    @IBOutlet weak var idoTextField: UITextField!
+    @IBOutlet weak var keidoTextField: UITextField!
+    
+    //プロトコルを変数化
+    var delegate:SearchLocationDeledate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func okAction(_ sender: Any) {
+        
+        //入力された値を取得
+        let idoValue = idoTextField.text!
+        let keidoValue = keidoTextField.text!
+        
+        //テキストフィールドが空でなければ、画面を戻る。
+        if idoTextField.text != nil && keidoTextField.text != nil{
+            
+        //デリゲートメソッドの引数に入れる これで、他のコントローラーで使用できる準備が完了
+        delegate?.searchLocation(idovalue: idoValue, keidoValue: keidoValue)
+        
+        
+        
+            dismiss(animated: true, completion: nil)
+        }
+        
     }
-    */
+    
+ 
 
 }

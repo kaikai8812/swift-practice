@@ -10,8 +10,8 @@ import UIKit
 import MapKit   //mapの表示関連のkit
 import CoreLocation    //mapの座標関連を取得できたりするやつ
 
-class ViewController: UIViewController, CLLocationManagerDelegate, UIGestureRecognizerDelegate {
-
+class ViewController: UIViewController, CLLocationManagerDelegate, UIGestureRecognizerDelegate, SearchLocationDeledate {
+    
     
     
     @IBOutlet var longPress: UILongPressGestureRecognizer!
@@ -92,12 +92,44 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIGestureReco
         
         if segue.identifier == "next" {
             let nextVC = segue.destination as! NextViewController
+            nextVC.delegate = self
         }
     }
+    
+    
+    func searchLocation(idovalue: String, keidoValue: String) {
+        //渡ってきたデータを取得
+        
+        if idovalue.isEmpty != true && keidoValue.isEmpty != true{
+            let idoString = CLLocationDegrees(idovalue)
+            let keidoString = CLLocationDegrees(keidoValue)
+            
+            //受け取ったデータから、緯度、経度データを作成する。
+            //CLLocationDegrees型は、Double型でも代用が効くので、以下のようにキャストしている。
+            
+            let coordinate = CLLocationCoordinate2DMake(Double(idoString!), Double(keidoString!))
+            
+            //表示する範囲を指定
+            let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+            
+            //領域を指定
+            let region = MKCoordinateRegion(center: coordinate, span: span)
+            
+            //領域をmapViewに設定
+            mapView.setRegion(region, animated: true)
+            
+            //緯度経度から、住所に変化し、ラベルに表示
+            convert(lat: Double(idoString!), log: Double(keidoString!))
+            
+        } else {
+            addressLabel.text = "表示するものはありません。"
+        }
+        
     
     
     
 }
 
 //クロージャーの説明に関して、言い間違いがありました。
-//正確には、値が入ったあとに括弧内が呼ばれ、値が入るまでは括弧の外が呼ばれるということになります！
+//正確には、値が入ったあとに括弧内が呼ばれ、値が入るまでは括弧の外が呼ばれるということになります
+}
