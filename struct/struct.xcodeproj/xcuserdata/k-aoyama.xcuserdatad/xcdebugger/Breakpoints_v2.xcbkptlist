@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "435506C2-D55E-479D-AD57-0A2F49AF221D"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6B396AD6-6D47-4C7E-9F85-24ACF571832B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "struct/Controller/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AB12BED7-AEF6-4F8C-BF1A-77C31428E418"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "struct/Controller/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "setOK(check:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "80E937EF-F6B4-4007-BD54-949D31172BA4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "struct/Controller/NextViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "done(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F9B6ABE2-60F0-4638-B51D-C14DC4D6AC1D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "struct/Controller/NextViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "SetOKDelegate"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "33B83E67-4E3F-4F04-B01B-C74FE2522863"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "struct/Controller/NextViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "NextViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "33B83E67-4E3F-4F04-B01B-C74FE2522863 - 796cf191bb76ba53"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "struct.NextViewController.setOKDelegate.getter : Swift.Optional&lt;struct.SetOKDelegate&gt;"
+                  moduleName = "struct"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k-aoyama/Desktop/swift-practice/struct/struct/Controller/NextViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "91">
+               </Location>
+               <Location
+                  uuid = "33B83E67-4E3F-4F04-B01B-C74FE2522863 - 6afc281cb9588a67"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "struct.NextViewController.setOKDelegate.setter : Swift.Optional&lt;struct.SetOKDelegate&gt;"
+                  moduleName = "struct"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k-aoyama/Desktop/swift-practice/struct/struct/Controller/NextViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "155">
+               </Location>
+               <Location
+                  uuid = "33B83E67-4E3F-4F04-B01B-C74FE2522863 - 8bc28b41a6c33b68"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "struct.NextViewController.setOKDelegate.modify : Swift.Optional&lt;struct.SetOKDelegate&gt;"
+                  moduleName = "struct"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k-aoyama/Desktop/swift-practice/struct/struct/Controller/NextViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "33B83E67-4E3F-4F04-B01B-C74FE2522863 - a4bd7d0ff7cfabe7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "struct.NextViewController.setOKDelegate.modify : Swift.Optional&lt;struct.SetOKDelegate&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "struct"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k-aoyama/Desktop/swift-practice/struct/struct/Controller/NextViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "8">
+               </Location>
+               <Location
+                  uuid = "33B83E67-4E3F-4F04-B01B-C74FE2522863 - 27e3357de0cd9ce9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "struct.NextViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; struct.NextViewController"
+                  moduleName = "struct"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k-aoyama/Desktop/swift-practice/struct/struct/Controller/NextViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "493">
+               </Location>
+               <Location
+                  uuid = "33B83E67-4E3F-4F04-B01B-C74FE2522863 - f09ba078dff5457a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "struct.NextViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;struct.NextViewController&gt;"
+                  moduleName = "struct"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k-aoyama/Desktop/swift-practice/struct/struct/Controller/NextViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "428">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "48FAD3C8-EBF7-44A2-B7AA-EC3046488CF9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "struct/Controller/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F413C0F9-09DB-4723-AAE8-AF83C475D1D0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "struct/Controller/NextViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "NextViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "F413C0F9-09DB-4723-AAE8-AF83C475D1D0 - 796cf191bb76ba53"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "struct.NextViewController.setOKDelegate.getter : Swift.Optional&lt;struct.SetOKDelegate&gt;"
+                  moduleName = "struct"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k-aoyama/Desktop/swift-practice/struct/struct/Controller/NextViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "91">
+               </Location>
+               <Location
+                  uuid = "F413C0F9-09DB-4723-AAE8-AF83C475D1D0 - 6afc281cb9588a67"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "struct.NextViewController.setOKDelegate.setter : Swift.Optional&lt;struct.SetOKDelegate&gt;"
+                  moduleName = "struct"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k-aoyama/Desktop/swift-practice/struct/struct/Controller/NextViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "155">
+               </Location>
+               <Location
+                  uuid = "F413C0F9-09DB-4723-AAE8-AF83C475D1D0 - 8bc28b41a6c33b68"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "struct.NextViewController.setOKDelegate.modify : Swift.Optional&lt;struct.SetOKDelegate&gt;"
+                  moduleName = "struct"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k-aoyama/Desktop/swift-practice/struct/struct/Controller/NextViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "F413C0F9-09DB-4723-AAE8-AF83C475D1D0 - a4bd7d0ff7cfabe7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "struct.NextViewController.setOKDelegate.modify : Swift.Optional&lt;struct.SetOKDelegate&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "struct"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k-aoyama/Desktop/swift-practice/struct/struct/Controller/NextViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "8">
+               </Location>
+               <Location
+                  uuid = "F413C0F9-09DB-4723-AAE8-AF83C475D1D0 - 27e3357de0cd9ce9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "struct.NextViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; struct.NextViewController"
+                  moduleName = "struct"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k-aoyama/Desktop/swift-practice/struct/struct/Controller/NextViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "493">
+               </Location>
+               <Location
+                  uuid = "F413C0F9-09DB-4723-AAE8-AF83C475D1D0 - f09ba078dff5457a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "struct.NextViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;struct.NextViewController&gt;"
+                  moduleName = "struct"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/k-aoyama/Desktop/swift-practice/struct/struct/Controller/NextViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "428">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
