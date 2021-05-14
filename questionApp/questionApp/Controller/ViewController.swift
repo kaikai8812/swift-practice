@@ -22,6 +22,8 @@ class ViewController: UIViewController, NowScoreDelegate {
     var maxScore = 0    //最高得点
     var questionNumber = 0 //問題番号
     
+    var soundFile = SoundFile()
+    
     
     //よういした画像データ等を、変数に代入
     let imagelist = ImagesList()
@@ -29,10 +31,25 @@ class ViewController: UIViewController, NowScoreDelegate {
     //回答を入れておく変数
     var pickedAnswer = Bool()
     
+    //モデルの実体化
+    var changeColor = ChangeColor()
+    
+    //CAGradientLayer型は、色のグラデーションが格納されているデータ型
+    var gradientLayer = CAGradientLayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        gradientLayer = changeColor.changeColor(topR: 0.07, topG: 0.13, topB: 0.26, topAlpha: 1.0, bottomR: 0.54, bottomG: 0.74, bottomB: 0.74, bottomAlpha: 1.0)
+        
+        //グラディえーションの大きさを決める。view.boundsで、view全体を表す。
+        gradientLayer.frame = view.bounds
+        
+        //viewのlayerに、作成したグラディエーションを差し込む
+        view.layer.insertSublayer(gradientLayer, at: 0)
+        
+        imageView.layer.cornerRadius = 20.0
+        
     }
     
     //画面表示の際に、毎回読み込まセル記述
@@ -63,6 +80,7 @@ class ViewController: UIViewController, NowScoreDelegate {
             pickedAnswer = true
 
             //丸ボタンの音声
+            soundFile.playsound(filename: "maruSound", extensionName: "mp3")
 
         } else if (sender as AnyObject).tag == 2{ //×ボタンが押された時
 
@@ -70,6 +88,7 @@ class ViewController: UIViewController, NowScoreDelegate {
             pickedAnswer = false
 
             //×ボタンの音声
+            soundFile.playsound(filename: "batsuSound", extensionName: "mp3")
         }
         
         //pickedAnswerと、画像データのcorrect~~があっているかを確認
@@ -115,6 +134,8 @@ class ViewController: UIViewController, NowScoreDelegate {
     func nowScore(score: Int) {
         //最高得点を、ラベルに反映させる
         maxScoreLabel.text = String(score)
+        
+        soundFile.playsound(filename: "sound", extensionName: "mp3")
     }
     
 
