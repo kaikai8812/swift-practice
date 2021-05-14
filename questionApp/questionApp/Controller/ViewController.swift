@@ -7,7 +7,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, NowScoreDelegate {
+
+    
 
     
     @IBOutlet weak var imageView: UIImageView!
@@ -41,8 +43,15 @@ class ViewController: UIViewController {
         wrongCount = 0
         questionNumber = 0
         
+        //最初の問題画像を表示
         imageView.image = UIImage(named: imagelist.list[0].imageText)
         
+        //maxScoreに、保存されている現在の最高得点を代入
+        if UserDefaults.standard.object(forKey: "beforeCount") != nil {
+            maxScore = UserDefaults.standard.object(forKey: "beforeCount") as! Int
+        }
+        //現在の最高得点をviewに表示させる記述
+        maxScoreLabel.text = String(maxScore)
     }
 
     //senderは、押されたボタンそのもの(UIButton)とみなされる。
@@ -101,9 +110,27 @@ class ViewController: UIViewController {
             performSegue(withIdentifier: "next", sender: nil)
         }
     }
+    
+    
+    func nowScore(score: Int) {
+        //最高得点を、ラベルに反映させる
+        maxScoreLabel.text = String(score)
+    }
+    
 
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "next" {
+            
+            let nextVC = segue.destination as! NextViewController
+            nextVC.correctedCount = correctCount
+            nextVC.wrongCount = wrongCount
+            
+            nextVC.delegate = self
+            
+        }
+        
+    }
     
 
     
