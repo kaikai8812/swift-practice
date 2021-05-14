@@ -17,6 +17,8 @@
 		6C47EE36264DC0B800C03FBD /* batsuSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6C47EE34264DC0B800C03FBD /* batsuSound.mp3 */; };
 		6C47EE37264DC0B800C03FBD /* sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6C47EE35264DC0B800C03FBD /* sound.mp3 */; };
 		6C47EE3C264DC36300C03FBD /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C47EE3B264DC36300C03FBD /* NextViewController.swift */; };
+		6C706AC1264E529200A080D1 /* ImagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C706AC0264E529200A080D1 /* ImagesModel.swift */; };
+		6C706AC3264E554200A080D1 /* ImagesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C706AC2264E554200A080D1 /* ImagesList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		6C47EE34264DC0B800C03FBD /* batsuSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = batsuSound.mp3; path = "../../../../Downloads/Resources/iOS14画像集/QuestionApp1素材/batsuSound.mp3"; sourceTree = "<group>"; };
 		6C47EE35264DC0B800C03FBD /* sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = sound.mp3; path = "../../../../Downloads/Resources/iOS14画像集/QuestionApp1素材/sound.mp3"; sourceTree = "<group>"; };
 		6C47EE3B264DC36300C03FBD /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
+		6C706AC0264E529200A080D1 /* ImagesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesModel.swift; sourceTree = "<group>"; };
+		6C706AC2264E554200A080D1 /* ImagesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 		6C47EE38264DC20300C03FBD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6C706AC0264E529200A080D1 /* ImagesModel.swift */,
+				6C706AC2264E554200A080D1 /* ImagesList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -176,6 +182,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C706AC1264E529200A080D1 /* ImagesModel.swift in Sources */,
+				6C706AC3264E554200A080D1 /* ImagesList.swift in Sources */,
 				6C47EE23264DBF0200C03FBD /* ViewController.swift in Sources */,
 				6C47EE3C264DC36300C03FBD /* NextViewController.swift in Sources */,
 				6C47EE1F264DBF0200C03FBD /* AppDelegate.swift in Sources */,
