@@ -44,13 +44,30 @@
             </objects>
             <point key="canvasLocation" x="685.50724637681162" y="185.49107142857142"/>
         </scene>
-        <!--View Controller-->
+        <!--Login Movie View Controller-->
         <scene sceneID="wtI-Rw-xQY">
             <objects>
-                <viewController id="ysR-RG-p9T" sceneMemberID="viewController">
+                <viewController id="ysR-RG-p9T" customClass="LoginMovieViewController" customModule="newsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6XM-Hz-jEt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.55000000000000004" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DDg-4j-oG2">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jhp-H1-9Zw">
+                                <rect key="frame" x="122" y="415" width="169" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <state key="normal" title="ログイン"/>
+                                <connections>
+                                    <action selector="login:" destination="ysR-RG-p9T" eventType="touchUpInside" id="FZk-nA-Hnh"/>
+                                    <segue destination="BTN-jU-hWC" kind="show" id="wsm-D6-DZf"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="uHW-dR-LbH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -59,6 +76,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cdo-S7-yTs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1389.8550724637682" y="184.82142857142856"/>
+        </scene>
+        <!--Base View Controller-->
+        <scene sceneID="NIA-yZ-bRF">
+            <objects>
+                <viewController id="BTN-jU-hWC" customClass="BaseViewController" customModule="newsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bhf-Qs-yRI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="qid-PX-ZKQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0Eq-Wx-NhU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Iu-fV-yuO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2100" y="185"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jqj-Qk-QFj">

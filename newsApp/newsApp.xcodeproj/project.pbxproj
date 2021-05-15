@@ -19,6 +19,12 @@
 		6C968540264FE86000060934 /* 5.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C96853B264FE86000060934 /* 5.json */; };
 		6C968542264FE87600060934 /* 6.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C968541264FE87600060934 /* 6.json */; };
 		6C968544264FE8F600060934 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C968543264FE8F600060934 /* IntroViewController.swift */; };
+		6C96854626500F6100060934 /* LoginMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C96854526500F6100060934 /* LoginMovieViewController.swift */; };
+		6C96854826501B1600060934 /* start.mov in Resources */ = {isa = PBXBuildFile; fileRef = 6C96854726501B1600060934 /* start.mov */; };
+		6C96854A26501C4900060934 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C96854926501C4900060934 /* BaseViewController.swift */; };
+		6C96854C2650296900060934 /* Page1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C96854B2650296900060934 /* Page1ViewController.swift */; };
+		6C96854E26502F1B00060934 /* header.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6C96854D26502F1B00060934 /* header.jpg */; };
+		6C968551265034F200060934 /* NewsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C968550265034F200060934 /* NewsItems.swift */; };
 		8746BDDE58EE1099175306F1 /* Pods_newsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23285B6DA408171BF79A43E /* Pods_newsApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +43,12 @@
 		6C96853B264FE86000060934 /* 5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = 5.json; path = "../../../../Downloads/Resources/iOS14画像集/Swift5NewsXMLImagesAndJsons/5.json"; sourceTree = "<group>"; };
 		6C968541264FE87600060934 /* 6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = 6.json; path = ../../../../Downloads/6.json; sourceTree = "<group>"; };
 		6C968543264FE8F600060934 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		6C96854526500F6100060934 /* LoginMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMovieViewController.swift; sourceTree = "<group>"; };
+		6C96854726501B1600060934 /* start.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = start.mov; path = "../../../../Downloads/Resources/iOS14画像集/Swift5NewsXMLImagesAndJsons/start.mov"; sourceTree = "<group>"; };
+		6C96854926501C4900060934 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		6C96854B2650296900060934 /* Page1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page1ViewController.swift; sourceTree = "<group>"; };
+		6C96854D26502F1B00060934 /* header.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = header.jpg; path = "../../../../Downloads/Resources/iOS14画像集/Swift5NewsXMLImagesAndJsons/header.jpg"; sourceTree = "<group>"; };
+		6C968550265034F200060934 /* NewsItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItems.swift; sourceTree = "<group>"; };
 		C26445A9FE42B9AB0DA25DAF /* Pods-newsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newsApp.release.xcconfig"; path = "Target Support Files/Pods-newsApp/Pods-newsApp.release.xcconfig"; sourceTree = "<group>"; };
 		E1570D1CFD44B7CD79FE9183 /* Pods-newsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newsApp.debug.xcconfig"; path = "Target Support Files/Pods-newsApp/Pods-newsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F23285B6DA408171BF79A43E /* Pods_newsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_newsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,12 +109,14 @@
 				6C968535264FE76D00060934 /* View */,
 				6C96852B264FE2AD00060934 /* LaunchScreen.storyboard */,
 				6C96852E264FE2AD00060934 /* Info.plist */,
+				6C96854D26502F1B00060934 /* header.jpg */,
 				6C968537264FE86000060934 /* 1.json */,
 				6C968538264FE86000060934 /* 2.json */,
 				6C96853A264FE86000060934 /* 3.json */,
 				6C968539264FE86000060934 /* 4.json */,
 				6C96853B264FE86000060934 /* 5.json */,
 				6C968541264FE87600060934 /* 6.json */,
+				6C96854726501B1600060934 /* start.mov */,
 			);
 			path = newsApp;
 			sourceTree = "<group>";
@@ -110,6 +124,7 @@
 		6C968534264FE76400060934 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6C968550265034F200060934 /* NewsItems.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -129,6 +144,9 @@
 				6C968520264FE2AA00060934 /* AppDelegate.swift */,
 				6C968522264FE2AA00060934 /* SceneDelegate.swift */,
 				6C968543264FE8F600060934 /* IntroViewController.swift */,
+				6C96854526500F6100060934 /* LoginMovieViewController.swift */,
+				6C96854926501C4900060934 /* BaseViewController.swift */,
+				6C96854B2650296900060934 /* Page1ViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -198,7 +216,9 @@
 				6C96852A264FE2AD00060934 /* Assets.xcassets in Resources */,
 				6C968540264FE86000060934 /* 5.json in Resources */,
 				6C96853F264FE86000060934 /* 3.json in Resources */,
+				6C96854E26502F1B00060934 /* header.jpg in Resources */,
 				6C968528264FE2AA00060934 /* Main.storyboard in Resources */,
+				6C96854826501B1600060934 /* start.mov in Resources */,
 				6C96853E264FE86000060934 /* 4.json in Resources */,
 				6C96853C264FE86000060934 /* 1.json in Resources */,
 			);
@@ -253,7 +273,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C96854A26501C4900060934 /* BaseViewController.swift in Sources */,
+				6C968551265034F200060934 /* NewsItems.swift in Sources */,
 				6C968544264FE8F600060934 /* IntroViewController.swift in Sources */,
+				6C96854626500F6100060934 /* LoginMovieViewController.swift in Sources */,
+				6C96854C2650296900060934 /* Page1ViewController.swift in Sources */,
 				6C968521264FE2AA00060934 /* AppDelegate.swift in Sources */,
 				6C968523264FE2AA00060934 /* SceneDelegate.swift in Sources */,
 			);
