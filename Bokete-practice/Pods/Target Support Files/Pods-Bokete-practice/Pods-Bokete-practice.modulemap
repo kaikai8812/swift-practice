@@ -1,0 +1,6 @@
+framework module Pods_Bokete_practice {
+  umbrella header "Pods-Bokete-practice-umbrella.h"
+
+  export *
+  module * { export * }
+}
