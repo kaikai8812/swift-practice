@@ -73,7 +73,7 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "next" {
+        if segue.identifier == "share" {
            let shareVC = segue.destination as! ShareViewController
             
             shareVC.commentString = commentTextView.text
@@ -96,6 +96,7 @@ class ViewController: UIViewController {
         
         //Alamofireを用いて、httpリクエストをする
         AF.request(url).responseJSON{(responce) in
+            //responceの中に、httpリクエストをして帰ってきたJSON形式のデータが入っていると考える。
             switch responce.result{
             
             case .success:
@@ -115,11 +116,6 @@ class ViewController: UIViewController {
                 print(error)
             }
         }
-        
-        //帰ってきたhttpレスポンスにあるJsonファイルを解析する
-        //imageView.imageに貼り付ける。
-        
     }
-
 }
 

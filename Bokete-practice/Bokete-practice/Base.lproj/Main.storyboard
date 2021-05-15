@@ -66,7 +66,7 @@
                         <outlet property="commentTextView" destination="Sn4-Af-gn5" id="PHl-hG-thT"/>
                         <outlet property="odaiImageView" destination="3jX-j8-FSJ" id="Snk-NJ-ylP"/>
                         <outlet property="searchTextField" destination="fXb-Zh-Okl" id="4qB-64-Oqn"/>
-                        <segue destination="uFz-7j-I9t" kind="presentation" identifier="next" modalPresentationStyle="fullScreen" id="B7e-A1-noo"/>
+                        <segue destination="uFz-7j-I9t" kind="presentation" identifier="share" modalPresentationStyle="fullScreen" id="B7e-A1-noo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -100,11 +100,17 @@
                                 <rect key="frame" x="158" y="758" width="97" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="シェアする"/>
+                                <connections>
+                                    <action selector="share:" destination="uFz-7j-I9t" eventType="touchUpInside" id="rvn-I2-Rq9"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efR-MG-SSw">
                                 <rect key="frame" x="158" y="807" width="97" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="戻る"/>
+                                <connections>
+                                    <action selector="back:" destination="uFz-7j-I9t" eventType="touchUpInside" id="QbA-ob-FBy"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ae-9E-wiO">
                                 <rect key="frame" x="65" y="545" width="288" height="147"/>
