@@ -1,3 +1,4 @@
+
 //
 //  Page1ViewController.swift
 //  newsApp
@@ -8,9 +9,7 @@
 import UIKit
 import SegementSlide
 
-//SegementSlideContentScrollViewDelegateで、SegementSlide各要素の設定を行う。
-//SegementSlideContentScrollViewDelegateという記述があることで、BaseViewController: SegementSlideDefaultViewControllerから、各タブに表示される内容の設定を、任されている！
-class Page1ViewController: UITableViewController,SegementSlideContentScrollViewDelegate, XMLParserDelegate {
+class Page3ViewController: UITableViewController,SegementSlideContentScrollViewDelegate, XMLParserDelegate {
 
     //RSSのパース中の現在の要素名
     var currentElementName:String!
@@ -26,12 +25,16 @@ class Page1ViewController: UITableViewController,SegementSlideContentScrollViewD
         
         //画像を、TableViewの背景にする
         
-        let image = UIImage(named: "0")
+        let image = UIImage(named: "3")
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.size.width, height: self.tableView.frame.size.height))
         
         imageView.image = image
         self.tableView.backgroundView = imageView
+        
+        
 
+    
+        
         //XMLパースを作成する
         
         //XMLparserのインスタンスを作成する。
@@ -77,7 +80,7 @@ class Page1ViewController: UITableViewController,SegementSlideContentScrollViewD
         cell.backgroundColor = .clear
         
         let newsItem = self.newsItems[indexPath.row] //selfの必要性を考える
-        print(indexPath.row)
+        
         //メインテキストの部分の定義
         cell.textLabel?.text = newsItem.title
         cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 15.0)
@@ -104,42 +107,30 @@ class Page1ViewController: UITableViewController,SegementSlideContentScrollViewD
         }else{
             currentElementName = elementName
         }
-        print("if")
-        print(currentElementName)
-        print("if")
     }
     
-    
-    //XMLファイル内の、文字列を見つけた時に、この関数が働く(タグは、無視される。)
+    //上の記述のdidStartElementで、条件にあったものが見つかった場合、今回はelementnameがitemだった場合に次にどのような処理を行うかを記述する。
+
     func parser(_ parser: XMLParser, foundCharacters string: String) {
         
         if self.newsItems.count > 0 {
             let lastItem = self.newsItems[self.newsItems.count - 1]
+            
             switch self.currentElementName {
             case "title":
                 lastItem.title = string
-                print(string)
             case "link":
                 lastItem.url = string
-                print(string)
             case "pubDate":
                 lastItem.pubDate = string
-                print(string)
             default:
                 break
             }
-            print("add")
-            print(newsItems.count)
-            print("add")
         }
-        print(string)
     }
     
     //<title>string</title>の閉じタグ部分に達した時に行う処理
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-        print("finish")
-        print(elementName)
-        print("finish")
         self.currentElementName = nil
     }
     
@@ -184,7 +175,7 @@ class Page1ViewController: UITableViewController,SegementSlideContentScrollViewD
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 
@@ -214,3 +205,4 @@ class Page1ViewController: UITableViewController,SegementSlideContentScrollViewD
     */
 
 }
+
