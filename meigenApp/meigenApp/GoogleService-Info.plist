@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>779470277761-ga2sj8jvthe4ikjagt4jgia5thijo79s.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.779470277761-ga2sj8jvthe4ikjagt4jgia5thijo79s</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAdUibMs2-YfmgttX5jHYdM-gC2E7Sp_qw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>779470277761</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.aoyamakai.meigenApp</string>
+	<key>PROJECT_ID</key>
+	<string>meigenapp-b0111</string>
+	<key>STORAGE_BUCKET</key>
+	<string>meigenapp-b0111.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:779470277761:ios:f70d271837241a08fa5180</string>
+</dict>
+</plist>
