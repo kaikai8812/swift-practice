@@ -6,16 +6,35 @@
 //
 
 import UIKit
+import FirebaseAuth //ログインのバリデーション追加のため, なぜ、この場合は、FireBaseではないのか？？？
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        
+        //もし、ログインしていたら。
+        if Auth.auth().currentUser?.uid != nil {
+            let window = UIWindow(windowScene: scene as! UIWindowScene)
+            self.window = window
+            
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)  //ここのMainは、Main.storyBoardのMain
+            let viewVC = storyBoard.instantiateViewController(identifier: "viewVC")
+            let navVC = UINavigationController(rootViewController: viewVC)
+            window.rootViewController = navVC
+        } else {
+            let window = UIWindow(windowScene: scene as! UIWindowScene)
+            self.window = window
+            
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)  //ここのMainは、Main.storyBoardのMain
+            let viewVC = storyBoard.instantiateViewController(identifier: "loginVC")
+            let navVC = UINavigationController(rootViewController: viewVC)
+            window.rootViewController = navVC
+        }
+        
+        
+  
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 

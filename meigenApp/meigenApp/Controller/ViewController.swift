@@ -111,7 +111,7 @@ class ViewController: UIViewController , XMLParserDelegate, UIViewControllerTran
             //保存するデータ内容を記述する。データは、辞書型で記入する。
             //Auth.auth.currnetUserで、現在ログインしているユーザーの情報を取得でできる。
             //Date().timeIntervalSince1970で、日時を取得できる。
-            db.collection("feed").addDocument(data: ["userName": Auth.auth().currentUser?.displayName, "quote": meigenLabel.text, "photoURL": Auth.auth().currentUser?.photoURL?.absoluteString, "createdAt":Date().timeIntervalSince1970]) { error in
+            db.collection("feed").addDocument(data: ["userName": Auth.auth().currentUser?.displayName, "quote": meigenLabel.text, "photoURL": Auth.auth().currentUser?.photoURL?.absoluteString, "createAt":Date().timeIntervalSince1970]) { error in
                 if error != nil{
                     print(error.debugDescription)
                     return
@@ -130,11 +130,16 @@ class ViewController: UIViewController , XMLParserDelegate, UIViewControllerTran
     //ログアウト処理
     @IBAction func logout(_ sender: Any) {
         
+        //ナビゲーションバーを使用した時の、前画面に戻る処理
+        self.navigationController?.popViewController(animated: true)
+        
         do {
             try Auth.auth().signOut()
         } catch let error as NSError {
             print(error.localizedDescription)
         }
+        
+        
         
     }
     

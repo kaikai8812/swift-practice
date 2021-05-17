@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import FirebaseAuth //twitterログイン用
+import Firebase //twitterログイン用
 import NVActivityIndicatorView  
 
 class LoginViewController: UIViewController {
@@ -21,14 +21,10 @@ class LoginViewController: UIViewController {
 
     }
     
-    
-
-
-    
-    @IBAction func twitterLogin(_ sender: Any) {
+        @IBAction func twitterLogin(_ sender: Any) {
         provider = OAuthProvider(providerID: TwitterAuthProviderID)  //ここ付近の処理で、twitterでログインするための情報を取得
-        provider?.customParameters = ["forcw_login":"true"]
-        provider?.getCredentialWith(nil, completion: {  //
+        provider?.customParameters = ["force_login":"true"]
+        provider?.getCredentialWith(nil, completion: {
             (credential, error) in
             
             //ロード画面を作成する
