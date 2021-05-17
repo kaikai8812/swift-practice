@@ -36,11 +36,8 @@ class ViewController: UIViewController , XMLParserDelegate, UIViewControllerTran
     }
     
     
-    @IBAction func toFeedButton(_ sender: Any) {}
+  
         
-        
-        
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -91,18 +88,87 @@ class ViewController: UIViewController , XMLParserDelegate, UIViewControllerTran
     }
     
     
+    
+    
+    //シェアボタン、機能の作成
     @IBAction func share(_ sender: Any) {
         
         var postString = String()
         postString = "\(userName)さんを表す名言:\n\(meigenLabel.text!)\n#あなたを表す名変メーカー"
         
-        let shareItems = [postString] as [String]
+        let shareItems = [postString] as [String]  //シェアする際の渡すデータは、配列で作成する。
         
         let controller = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
         
         present(controller, animated: true, completion: nil)
     }
     
+    //firestoreに、データを保存する。
+    @IBAction func sendData(_ sender: Any) {
+        
+        if let quote = meigenLabel.text, let userName = Auth.auth().currentUser?.uid{
+            
+            //保存するデータ内容を記述する。データは、辞書型で記入する。
+            //Auth.auth.currnetUserで、現在ログインしているユーザーの情報を取得でできる。
+            //Date().timeIntervalSince1970で、日時を取得できる。
+            db.collection("feed").addDocument(data: ["userName": Auth.auth().currentUser?.displayName, "quote": meigenLabel.text, "photoURL": Auth.auth().currentUser?.photoURL?.absoluteString, "createdAt":Date().timeIntervalSince1970]) { error in
+                if error != nil{
+                    print(error.debugDescription)
+                    return
+                }
+            }
+        }
+    }
+    
+    
+    @IBAction func tofeedVC(_ sender: Any) {
+        
+        performSegue(withIdentifier: "feedVC", sender: nil)
+        
+    }
+    
+    //ログアウト処理
+    @IBAction func logout(_ sender: Any) {
+        
+        do {
+            try Auth.auth().signOut()
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+        
+    }
+    
+    
 
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+          if let controller = segue.destination as? FeedViewController {
+            controller.transitioningDelegate = self
+            controller.modalPresentationStyle = .custom
+            controller.modalPresentationCapturesStatusBarAppearance = true
+            controller.interactiveTransition = interactiveTransition 
+            interactiveTransition.attach(to: controller)
+          }
+        }
+
+        
+        func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+          transition.transitionMode = .present
+          transition.startingPoint = toFeedButton.center
+          transition.bubbleColor = toFeedButton.backgroundColor!
+          return transition
+        }
+        
+        
+        func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+          transition.transitionMode = .dismiss
+          transition.startingPoint = toFeedButton.center
+          transition.bubbleColor = toFeedButton.backgroundColor!
+          return transition
+        }
+        
+        func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+          return interactiveTransition
+        }
 }
 

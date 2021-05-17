@@ -79,6 +79,9 @@
                                 <state key="normal" title="アプリ内でシェア">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="sendData:" destination="SL7-nO-404" eventType="touchUpInside" id="h8p-Wq-qwb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JN2-Wu-Ru0">
                                 <rect key="frame" x="166" y="710" width="83" height="78"/>
@@ -89,8 +92,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="toFeedButton:" destination="SL7-nO-404" eventType="touchUpInside" id="xAi-WA-ff5"/>
-                                    <segue destination="1lg-pP-6H2" kind="presentation" modalPresentationStyle="fullScreen" id="6jP-LV-Lu2"/>
+                                    <action selector="tofeedVC:" destination="SL7-nO-404" eventType="touchUpInside" id="lw2-cJ-JbH"/>
+                                    <segue destination="1lg-pP-6H2" kind="presentation" identifier="feedVC" modalPresentationStyle="fullScreen" id="6jP-LV-Lu2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8LK-yO-INl">
@@ -101,6 +104,9 @@
                                 <state key="normal" title="ログアウト">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="logout:" destination="SL7-nO-404" eventType="touchUpInside" id="Ql9-8S-gyC"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gL9-BL-Mvq"/>
@@ -116,10 +122,10 @@
             </objects>
             <point key="canvasLocation" x="1860.8695652173915" y="114.50892857142857"/>
         </scene>
-        <!--View Controller-->
+        <!--Feed View Controller-->
         <scene sceneID="8Fw-OG-e1e">
             <objects>
-                <viewController id="1lg-pP-6H2" sceneMemberID="viewController">
+                <viewController id="1lg-pP-6H2" customClass="FeedViewController" customModule="meigenApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NZy-Ym-doA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -148,6 +154,9 @@
                         <viewLayoutGuide key="safeArea" id="YC9-ul-N8s"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="MFq-uM-4Qk" id="yrC-sE-tXK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CVB-gc-C9k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
