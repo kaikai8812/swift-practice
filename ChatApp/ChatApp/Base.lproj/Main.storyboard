@@ -26,7 +26,7 @@
                                 <color key="backgroundColor" red="1" green="0.53360126539999997" blue="0.54494139870000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="始めよう！"/>
                                 <connections>
-                                    <segue destination="AaI-Bm-hos" kind="show" id="QsF-ny-2Xs"/>
+                                    <segue destination="AaI-Bm-hos" kind="show" identifier="chat" id="QsF-ny-2Xs"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -39,10 +39,10 @@
             </objects>
             <point key="canvasLocation" x="613" y="75"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="fkL-dZ-XGu">
             <objects>
-                <viewController id="AaI-Bm-hos" sceneMemberID="viewController">
+                <viewController id="AaI-Bm-hos" customClass="RegisterViewController" customModule="ChatApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e1M-ez-Sgc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,6 +54,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="tintColor" red="1" green="0.4189269887" blue="0.40889222339999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="新規登録"/>
+                                <connections>
+                                    <action selector="touroku:" destination="AaI-Bm-hos" eventType="touchUpInside" id="7HP-AU-39M"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="4" translatesAutoresizingMaskIntoConstraints="NO" id="Q34-Io-t6a">
                                 <rect key="frame" x="87" y="160" width="240" height="240"/>
@@ -81,11 +84,18 @@
                     </view>
                     <navigationItem key="navigationItem" id="eJY-Xj-AOT"/>
                     <connections>
+                        <outlet property="emailTextField" destination="RpU-wY-0nx" id="FxF-ue-q4H"/>
+                        <outlet property="passwordTextField" destination="H5E-bG-5f8" id="XBc-Zf-CLM"/>
+                        <outlet property="profileImageView" destination="Q34-Io-t6a" id="C3X-I8-x8d"/>
                         <segue destination="1iA-lO-Stn" kind="show" id="Gfr-yl-28l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fvc-Sd-zYd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="3EA-ak-cfQ"/>
+                <tapGestureRecognizer id="3EA-ak-cfQ">
+                    <connections>
+                        <action selector="tapImageView:" destination="AaI-Bm-hos" id="Aek-qt-JEB"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1418.840579710145" y="75"/>
         </scene>
@@ -172,7 +182,7 @@
         <!--Item 1-->
         <scene sceneID="BPd-tZ-oqn">
             <objects>
-                <viewController id="JJD-y1-VSX" sceneMemberID="viewController">
+                <viewController id="JJD-y1-VSX" customClass="ChatViewController" customModule="ChatApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hwk-9d-63X">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -202,12 +212,19 @@
                                 <rect key="frame" x="329" y="748" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="send"/>
+                                <connections>
+                                    <action selector="send:" destination="JJD-y1-VSX" eventType="touchUpInside" id="RT0-kt-x50"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0ic-P3-ev9"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="DVS-Eh-aue"/>
+                    <connections>
+                        <outlet property="messageTextField" destination="BMc-Ft-9Qb" id="45E-6p-a8Z"/>
+                        <outlet property="tableView" destination="at8-ya-3q6" id="i9n-iS-Xcl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gta-ff-g93" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -216,7 +233,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="TkP-oU-osa">
             <objects>
-                <tabBarController id="1iA-lO-Stn" sceneMemberID="viewController">
+                <tabBarController id="1iA-lO-Stn" customClass="TabBarController" customModule="ChatApp" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="gVh-cv-liV"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6sI-Yx-yfa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
