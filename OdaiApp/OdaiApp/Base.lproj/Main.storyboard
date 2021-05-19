@@ -113,6 +113,9 @@
                                 <rect key="frame" x="50" y="467" width="128" height="124"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="box"/>
+                                <connections>
+                                    <action selector="checkAnswer:" destination="l0W-Nu-hhQ" eventType="touchUpInside" id="j70-Lo-79o"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="39z-FQ-OGe"/>
@@ -134,10 +137,10 @@
             </objects>
             <point key="canvasLocation" x="1820" y="113.79310344827587"/>
         </scene>
-        <!--View Controller-->
+        <!--Check View Controller-->
         <scene sceneID="5h0-mK-bOf">
             <objects>
-                <viewController id="pbQ-rJ-S6u" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="checkVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pbQ-rJ-S6u" customClass="CheckViewController" customModule="OdaiApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fx7-uf-HqY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -153,16 +156,15 @@
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="58" id="nrN-Bo-vTZ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="58" id="nrN-Bo-vTZ">
                                         <rect key="frame" x="0.0" y="24.5" width="375" height="58"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nrN-Bo-vTZ" id="gS8-X5-Ehk">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="58"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTW-5I-TsN">
-                                                    <rect key="frame" x="28" y="18" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTW-5I-TsN">
+                                                    <rect key="frame" x="26" y="21" width="343" height="36"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -170,6 +172,12 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="CTW-5I-TsN" firstAttribute="trailing" secondItem="gS8-X5-Ehk" secondAttribute="trailingMargin" constant="10" id="Dmk-p4-3iB"/>
+                                                <constraint firstItem="CTW-5I-TsN" firstAttribute="top" secondItem="gS8-X5-Ehk" secondAttribute="topMargin" constant="10" id="a09-6W-E2T"/>
+                                                <constraint firstItem="CTW-5I-TsN" firstAttribute="bottom" secondItem="gS8-X5-Ehk" secondAttribute="bottomMargin" constant="10" id="hq2-jM-hzp"/>
+                                                <constraint firstItem="CTW-5I-TsN" firstAttribute="leading" secondItem="gS8-X5-Ehk" secondAttribute="leadingMargin" constant="10" id="mTk-W8-ZNS"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -189,10 +197,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Gvb-co-8Re"/>
+                    <connections>
+                        <outlet property="odaiLabel" destination="yBA-0h-bVE" id="11v-fY-SG8"/>
+                        <outlet property="tableView" destination="rXJ-BU-3Kz" id="fY0-wr-2k6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sgT-2y-bqp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2610" y="114"/>
+            <point key="canvasLocation" x="2608.8000000000002" y="113.79310344827587"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IYn-09-0Kb">
@@ -212,10 +224,10 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="114.50892857142857"/>
         </scene>
-        <!--View Controller-->
+        <!--Comment View Controller-->
         <scene sceneID="P1m-bz-fTL">
             <objects>
-                <viewController id="pyf-9c-XCQ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="commentVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pyf-9c-XCQ" customClass="CommentViewController" customModule="OdaiApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Y0x-fA-nBq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -274,6 +286,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Wpa-Cu-SnZ"/>
+                    <connections>
+                        <outlet property="kaitouLabel" destination="HHv-fI-hOE" id="HzB-3q-kO3"/>
+                        <outlet property="tableView" destination="5MX-j8-UcO" id="4iU-Qd-N9k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWI-XA-FsA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseFirestore
+import EMAlertController
 
 class ViewController: UIViewController {
     
@@ -76,15 +77,32 @@ class ViewController: UIViewController {
 
         }
         
-        print("送りました")
+        //アラートを表示させる
+        alert()
 
         
     }
     
-    
+    //アラート作成
+    func alert() {
+        let alert = EMAlertController(icon: UIImage(named: "check"), title: "投稿完了", message: "みんなの回答を見てみよう！")
+        let doneAction = EMAlertAction(title: "OK", style: .normal)
+        alert.addAction(doneAction)
+        present(alert, animated: true, completion: nil)
+        textview.text = ""
+    }
     
     
   
+    @IBAction func checkAnswer(_ sender: Any) {
+        
+        let checkVC = storyboard?.instantiateViewController(identifier: "checkVC") as! CheckViewController
+        
+        checkVC.odaiString = odaiLabel.text!
+        
+        navigationController?.pushViewController(checkVC, animated: true)
+        
+    }
     
     
     
