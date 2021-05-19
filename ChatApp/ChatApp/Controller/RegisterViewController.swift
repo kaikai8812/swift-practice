@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate,SendProfileOKDelegete {
+class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate,SendProfileOKDelegete,UITextFieldDelegate {
     
     
     

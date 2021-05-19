@@ -32,6 +32,10 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         tableView.delegate = self
         tableView.dataSource = self
         
+        tableView.separatorStyle = .none
+        //カスタムセルを使用する宣言
+        tableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "Cell")  //ここが実際にいるのかどうか、確認すること。
+        
         //アプリ内に保存したユーザイメージデータを引っ張ってきて、変数に入れる。
         if UserDefaults.standard.object(forKey: "userImage") != nil {
             imageString = UserDefaults.standard.object(forKey: "userImage") as! String
@@ -42,6 +46,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
         
         self.navigationItem.title = roomName
+        loadMessages(roomName: roomName)
     }
     
     func loadMessages(roomName:String) {
@@ -73,25 +78,52 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                             
                             let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
                             self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
-                            
                         }
-                        
                     }
-                    
                 }
-                
             }
-            
-            
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return messages.count
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        
+        //カスタムセルを使用する宣言
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MessageCell
+        //チャットデータが入る配列から、データを取得
+        let message = messages[indexPath.row]
+        
+        //チャット本文を代入
+        cell.label.text = message.body
+        
+        //チャットを送信したユーザによって、imageを表示するかどうかを判定。
+        if message.sender == Auth.auth().currentUser?.email{
+            cell.leftImageView.isHidden = true
+            cell.rightImageview.isHidden = false
+            cell.rightImageview.sd_setImage(with: URL(string: imageString), completed: nil)
+            cell.leftImageView.sd_setImage(with: URL(string: message.imageString), completed: nil)
+            
+            cell.backView.backgroundColor = .systemTeal
+            cell.label.textColor = .black
+        
+        } else {
+            cell.leftImageView.isHidden = false
+            cell.rightImageview.isHidden = true
+            cell.rightImageview.sd_setImage(with: URL(string: message.imageString), completed: nil)
+            cell.leftImageView.sd_setImage(with: URL(string: imageString), completed: nil)
+            
+            cell.backView.backgroundColor = .systemGreen
+            cell.label.textColor = .black
+        }
+        
+        return cell
     }
     
     

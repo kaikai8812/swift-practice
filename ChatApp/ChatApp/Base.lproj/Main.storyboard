@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ChatApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="welcomeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="ChatApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,7 +72,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H5E-bG-5f8">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワード" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H5E-bG-5f8">
                                 <rect key="frame" x="87" y="523" width="240" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -87,7 +87,7 @@
                         <outlet property="emailTextField" destination="RpU-wY-0nx" id="FxF-ue-q4H"/>
                         <outlet property="passwordTextField" destination="H5E-bG-5f8" id="XBc-Zf-CLM"/>
                         <outlet property="profileImageView" destination="Q34-Io-t6a" id="C3X-I8-x8d"/>
-                        <segue destination="1iA-lO-Stn" kind="show" id="Gfr-yl-28l"/>
+                        <segue destination="1iA-lO-Stn" kind="show" identifier="chat" id="Gfr-yl-28l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fvc-Sd-zYd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -102,7 +102,7 @@
         <!--Item 2-->
         <scene sceneID="BI6-Na-woL">
             <objects>
-                <viewController id="0Ir-q5-ctl" sceneMemberID="viewController">
+                <viewController id="0Ir-q5-ctl" customClass="RoomViewController" customModule="ChatApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="agu-Ig-zTV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -112,7 +112,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="84" id="o2V-JX-mH9">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RoomCell" rowHeight="84" id="o2V-JX-mH9">
                                         <rect key="frame" x="0.0" y="24.5" width="424" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o2V-JX-mH9" id="nD7-WP-ueo">
@@ -128,17 +128,18 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="kRp-Vp-9ZK"/>
                     <connections>
-                        <segue destination="gez-59-1Xw" kind="show" id="orV-ww-Den"/>
+                        <outlet property="tableview" destination="H12-X2-oRR" id="lPI-cw-qGU"/>
+                        <segue destination="gez-59-1Xw" kind="show" identifier="roomChat" id="orV-ww-Den"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2sE-by-UXQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3000" y="422"/>
         </scene>
-        <!--View Controller-->
+        <!--Chat View Controller-->
         <scene sceneID="bTX-rZ-0Sw">
             <objects>
-                <viewController id="gez-59-1Xw" sceneMemberID="viewController">
+                <viewController id="gez-59-1Xw" customClass="ChatViewController" customModule="ChatApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j7n-7N-llz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -162,6 +163,9 @@
                                 <rect key="frame" x="317" y="768" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="send"/>
+                                <connections>
+                                    <action selector="send:" destination="gez-59-1Xw" eventType="touchUpInside" id="ex3-qq-xaf"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kbk-Wk-2uk">
                                 <rect key="frame" x="-10" y="783" width="319" height="34"/>
@@ -174,6 +178,10 @@
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="jid-cO-8l7"/>
+                    <connections>
+                        <outlet property="messageTextField" destination="kbk-Wk-2uk" id="iP4-Yg-kIO"/>
+                        <outlet property="tableView" destination="cvK-gi-CbP" id="Fti-Ri-sE1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ku-4h-ay8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -233,7 +241,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="TkP-oU-osa">
             <objects>
-                <tabBarController id="1iA-lO-Stn" customClass="TabBarController" customModule="ChatApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1iA-lO-Stn" customClass="TabBarController" customModule="ChatApp" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="gVh-cv-liV"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6sI-Yx-yfa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
