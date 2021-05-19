@@ -75,7 +75,7 @@
                                         <rect key="frame" x="67" y="278" width="240" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="separatorColor"/>
-                                        <color key="textColor" systemColor="labelColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -83,7 +83,7 @@
                                 <color key="backgroundColor" systemColor="labelColor"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYv-JR-x6F">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYv-JR-x6F">
                                 <rect key="frame" x="50" y="117" width="274" height="126"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.55726374109999999" green="0.94269338179999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -105,6 +105,9 @@
                                 <rect key="frame" x="220" y="463" width="126" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="send"/>
+                                <connections>
+                                    <action selector="send:" destination="l0W-Nu-hhQ" eventType="touchUpInside" id="b6h-Re-rWn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkz-cH-pPK">
                                 <rect key="frame" x="50" y="467" width="128" height="124"/>
@@ -122,6 +125,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="4Mx-Wg-4Jm"/>
                     <connections>
+                        <outlet property="odaiLabel" destination="AYv-JR-x6F" id="ObQ-Uw-eR7"/>
+                        <outlet property="textview" destination="gf3-Jt-ebf" id="y7S-lU-8XV"/>
                         <segue destination="pbQ-rJ-S6u" kind="show" id="e87-BV-ReV"/>
                     </connections>
                 </viewController>
