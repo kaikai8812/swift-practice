@@ -1,0 +1,432 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		393AB786532EDE5ECEA62225 /* Pods_OdaiApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B84E808BCF9B3F5C1F9A7CEB /* Pods_OdaiApp.framework */; };
+		6CA11CF02654DE5800DD7464 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA11CEF2654DE5800DD7464 /* AppDelegate.swift */; };
+		6CA11CF22654DE5800DD7464 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA11CF12654DE5800DD7464 /* SceneDelegate.swift */; };
+		6CA11CF42654DE5800DD7464 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA11CF32654DE5800DD7464 /* ViewController.swift */; };
+		6CA11CF72654DE5800DD7464 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CA11CF52654DE5800DD7464 /* Main.storyboard */; };
+		6CA11CF92654DE5A00DD7464 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CA11CF82654DE5A00DD7464 /* Assets.xcassets */; };
+		6CA11CFC2654DE5A00DD7464 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CA11CFA2654DE5A00DD7464 /* LaunchScreen.storyboard */; };
+		6CA11D052654F5B900DD7464 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA11D042654F5B900DD7464 /* LoginViewController.swift */; };
+		6CCD39B02654FB1100A329EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6CCD39AF2654FB1100A329EE /* GoogleService-Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6CA11CEC2654DE5800DD7464 /* OdaiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OdaiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CA11CEF2654DE5800DD7464 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6CA11CF12654DE5800DD7464 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		6CA11CF32654DE5800DD7464 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6CA11CF62654DE5800DD7464 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6CA11CF82654DE5A00DD7464 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6CA11CFB2654DE5A00DD7464 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6CA11CFD2654DE5A00DD7464 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6CA11D042654F5B900DD7464 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		6CB1C3BC1121CE1B4275D233 /* Pods-OdaiApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OdaiApp.release.xcconfig"; path = "Target Support Files/Pods-OdaiApp/Pods-OdaiApp.release.xcconfig"; sourceTree = "<group>"; };
+		6CCD39AF2654FB1100A329EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8F3434B0D76B2DFF865DAAA4 /* Pods-OdaiApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OdaiApp.debug.xcconfig"; path = "Target Support Files/Pods-OdaiApp/Pods-OdaiApp.debug.xcconfig"; sourceTree = "<group>"; };
+		B84E808BCF9B3F5C1F9A7CEB /* Pods_OdaiApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OdaiApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6CA11CE92654DE5800DD7464 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				393AB786532EDE5ECEA62225 /* Pods_OdaiApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		23D3A3D8938D0D5C0098903E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B84E808BCF9B3F5C1F9A7CEB /* Pods_OdaiApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6CA11CE32654DE5800DD7464 = {
+			isa = PBXGroup;
+			children = (
+				6CA11CEE2654DE5800DD7464 /* OdaiApp */,
+				6CA11CED2654DE5800DD7464 /* Products */,
+				7D8979B4A7613457793AA685 /* Pods */,
+				23D3A3D8938D0D5C0098903E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6CA11CED2654DE5800DD7464 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6CA11CEC2654DE5800DD7464 /* OdaiApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6CA11CEE2654DE5800DD7464 /* OdaiApp */ = {
+			isa = PBXGroup;
+			children = (
+				6CA11CEF2654DE5800DD7464 /* AppDelegate.swift */,
+				6CA11CF12654DE5800DD7464 /* SceneDelegate.swift */,
+				6CA11D032654F5A000DD7464 /* Controller */,
+				6CA11CF52654DE5800DD7464 /* Main.storyboard */,
+				6CA11CF82654DE5A00DD7464 /* Assets.xcassets */,
+				6CA11CFA2654DE5A00DD7464 /* LaunchScreen.storyboard */,
+				6CA11CFD2654DE5A00DD7464 /* Info.plist */,
+				6CCD39AF2654FB1100A329EE /* GoogleService-Info.plist */,
+			);
+			path = OdaiApp;
+			sourceTree = "<group>";
+		};
+		6CA11D032654F5A000DD7464 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6CA11CF32654DE5800DD7464 /* ViewController.swift */,
+				6CA11D042654F5B900DD7464 /* LoginViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7D8979B4A7613457793AA685 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8F3434B0D76B2DFF865DAAA4 /* Pods-OdaiApp.debug.xcconfig */,
+				6CB1C3BC1121CE1B4275D233 /* Pods-OdaiApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6CA11CEB2654DE5800DD7464 /* OdaiApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6CA11D002654DE5A00DD7464 /* Build configuration list for PBXNativeTarget "OdaiApp" */;
+			buildPhases = (
+				7C3AA18D2C4418E7892F0E49 /* [CP] Check Pods Manifest.lock */,
+				6CA11CE82654DE5800DD7464 /* Sources */,
+				6CA11CE92654DE5800DD7464 /* Frameworks */,
+				6CA11CEA2654DE5800DD7464 /* Resources */,
+				F80C566B9DAF28B7EA3E57F8 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OdaiApp;
+			productName = OdaiApp;
+			productReference = 6CA11CEC2654DE5800DD7464 /* OdaiApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6CA11CE42654DE5800DD7464 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					6CA11CEB2654DE5800DD7464 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+				};
+			};
+			buildConfigurationList = 6CA11CE72654DE5800DD7464 /* Build configuration list for PBXProject "OdaiApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6CA11CE32654DE5800DD7464;
+			productRefGroup = 6CA11CED2654DE5800DD7464 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6CA11CEB2654DE5800DD7464 /* OdaiApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6CA11CEA2654DE5800DD7464 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CA11CFC2654DE5A00DD7464 /* LaunchScreen.storyboard in Resources */,
+				6CA11CF92654DE5A00DD7464 /* Assets.xcassets in Resources */,
+				6CA11CF72654DE5800DD7464 /* Main.storyboard in Resources */,
+				6CCD39B02654FB1100A329EE /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7C3AA18D2C4418E7892F0E49 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OdaiApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F80C566B9DAF28B7EA3E57F8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OdaiApp/Pods-OdaiApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OdaiApp/Pods-OdaiApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OdaiApp/Pods-OdaiApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6CA11CE82654DE5800DD7464 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CA11D052654F5B900DD7464 /* LoginViewController.swift in Sources */,
+				6CA11CF42654DE5800DD7464 /* ViewController.swift in Sources */,
+				6CA11CF02654DE5800DD7464 /* AppDelegate.swift in Sources */,
+				6CA11CF22654DE5800DD7464 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6CA11CF52654DE5800DD7464 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6CA11CF62654DE5800DD7464 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6CA11CFA2654DE5A00DD7464 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6CA11CFB2654DE5A00DD7464 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6CA11CFE2654DE5A00DD7464 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6CA11CFF2654DE5A00DD7464 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6CA11D012654DE5A00DD7464 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F3434B0D76B2DFF865DAAA4 /* Pods-OdaiApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P24W56LHXT;
+				INFOPLIST_FILE = OdaiApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.aoyamakai.OdaiApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		6CA11D022654DE5A00DD7464 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CB1C3BC1121CE1B4275D233 /* Pods-OdaiApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P24W56LHXT;
+				INFOPLIST_FILE = OdaiApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.aoyamakai.OdaiApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6CA11CE72654DE5800DD7464 /* Build configuration list for PBXProject "OdaiApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CA11CFE2654DE5A00DD7464 /* Debug */,
+				6CA11CFF2654DE5A00DD7464 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6CA11D002654DE5A00DD7464 /* Build configuration list for PBXNativeTarget "OdaiApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CA11D012654DE5A00DD7464 /* Debug */,
+				6CA11D022654DE5A00DD7464 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6CA11CE42654DE5800DD7464 /* Project object */;
+}
