@@ -24,6 +24,8 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var messageTextField: UITextField!
     
+    //ログアウトボタンの追加
+    var logoutBarButtonItem: UIBarButtonItem!
     
     
     override func viewDidLoad() {
@@ -33,6 +35,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         tableView.dataSource = self
         
         tableView.separatorStyle = .none
+        
         //カスタムセルを使用する宣言
         tableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "Cell")  //ここが実際にいるのかどうか、確認すること。
         
@@ -47,6 +50,25 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         self.navigationItem.title = roomName
         loadMessages(roomName: roomName)
+        
+        logoutBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBarButtonTapped(_:)))
+        logoutBarButtonItem.tintColor = .black
+        
+        self.navigationItem.rightBarButtonItem = logoutBarButtonItem
+    }
+    
+    @objc func addBarButtonTapped(_ sender: UIBarButtonItem) {
+        
+        let registerVC = storyboard?.instantiateViewController(identifier: "registerVC")
+        
+        do {
+                    try Auth.auth().signOut()
+                } catch let error as NSError {
+                    print(error.localizedDescription)
+                }
+        
+        navigationController?.pushViewController(registerVC!, animated: true)
+            print("【+】ボタンが押された!")
     }
     
     func loadMessages(roomName:String) {
@@ -94,7 +116,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+
         //カスタムセルを使用する宣言
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MessageCell
         //チャットデータが入る配列から、データを取得

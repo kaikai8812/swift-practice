@@ -7,6 +7,7 @@
 
 import UIKit
 import ViewAnimator
+import FirebaseAuth
 
 class RoomViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
@@ -17,6 +18,9 @@ class RoomViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     @IBOutlet weak var tableview: UITableView!
     
+    //ログアウトボタンの追加
+    var logoutBarButtonItem: UIBarButtonItem!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +28,11 @@ class RoomViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         tableview.delegate = self
         tableview.dataSource = self
         tableview.isHidden = true
+        
+        logoutBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBarButtonTapped(_:)))
+        logoutBarButtonItem.tintColor = .black
+        
+        self.navigationItem.rightBarButtonItem = logoutBarButtonItem
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -34,6 +43,16 @@ class RoomViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 //        let animation = AnimationType.from(direction: .top, offset: 300)
 //        UIView.animate(views: tableView.visibleCells, animations: [animation],delay: 0,duration: 2)
         
+    }
+    
+    @objc func addBarButtonTapped(_ sender: UIBarButtonItem) {
+            print("【+】ボタンが押された!")
+        do {
+                    try Auth.auth().signOut()
+            
+                } catch let error as NSError {
+                    print(error.localizedDescription)
+                }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -82,5 +101,8 @@ class RoomViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         // Pass the selected object to the new view controller.
     }
     */
+    
+   
 
 }
+

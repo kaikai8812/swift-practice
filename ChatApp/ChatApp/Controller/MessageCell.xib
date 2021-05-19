@@ -78,7 +78,7 @@
                 <outlet property="leftImageView" destination="bD6-4R-ea0" id="Jag-p5-Shk"/>
                 <outlet property="rightImageview" destination="haG-Tm-zXO" id="Bh5-e9-p4P"/>
             </connections>
-            <point key="canvasLocation" x="-1" y="77"/>
+            <point key="canvasLocation" x="-2.1739130434782612" y="76.674107142857139"/>
         </tableViewCell>
     </objects>
     <resources>

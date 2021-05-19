@@ -33,6 +33,12 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
         
         super.viewDidLoad()
         
+        if Auth.auth().currentUser?.email != nil{
+            print("ログインなう")
+        } else {
+            print("ログアウトできました！")
+        }
+        
         // Do any additional setup after loading the view.
     }
     
