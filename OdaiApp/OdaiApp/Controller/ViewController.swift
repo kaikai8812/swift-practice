@@ -20,6 +20,8 @@ class ViewController: UIViewController {
     
     var userName = String()
     
+    var idString = String()  //いいね機能の際に追加
+    
     
     @IBOutlet weak var textview: UITextView!
     
@@ -41,6 +43,16 @@ class ViewController: UIViewController {
         
         navigationController?.isNavigationBarHidden = true
         loadQuestiondata()
+        
+        if UserDefaults.standard.object(forKey: "documentID") != nil {
+            idString = UserDefaults.standard.object(forKey: "documentID") as! String
+        }else{
+            //ここで持ってきてるdocumentは、すでに一意に特定されているのか？まだ、どのドキュメントかはわかっていないのではないか？？
+            idString = Firestore.firestore().collection("Answers").document().path
+            print(idString)
+            idString = String(idString.dropFirst(8))
+            UserDefaults.standard.setValue(idString, forKey: "documentID")
+        }
         
     }
     
@@ -65,18 +77,23 @@ class ViewController: UIViewController {
     //FireStoreに、回答のデータを送信する
     @IBAction func send(_ sender: Any) {
         
+        
+        //いいねを含めた際での処理
+        db2.collection("Answers").document(idString).setData(["answer" : textview.text as Any, "userName": userName as Any, "postDate":Date().timeIntervalSince1970, "like":0, "likeFlagDic":[idString:false] ])
+        
+        
         //setDataの方は、コメントアウトしています。
 //        db2.collection("Answers").document().setData(["answer" : textview.text as Any, "userName": userName as Any, "postDate":Date().timeIntervalSince1970 ])
         
-        db2.collection("Answers").addDocument(data: ["answer" : textview.text as Any, "userName": userName as Any, "postDate":Date().timeIntervalSince1970 ]) { error in
-
-            if error != nil{
-                print(error.debugDescription)
-                return
-            }
-
-        }
-        
+//        db2.collection("Answers").addDocument(data: ["answer" : textview.text as Any, "userName": userName as Any, "postDate":Date().timeIntervalSince1970 ]) { error in
+//
+//            if error != nil{
+//                print(error.debugDescription)
+//                return
+//            }
+//
+//        }
+//
         //アラートを表示させる
         alert()
 
@@ -111,6 +128,10 @@ class ViewController: UIViewController {
         
         do {
             try firebaseAuth.signOut()
+            
+            UserDefaults.standard.removeObject(forKey: "userName")
+            UserDefaults.standard.removeObject(forKey: "documentID")
+            
         } catch let error as NSError {
             print("error",error)
         }

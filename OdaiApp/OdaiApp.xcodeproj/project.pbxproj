@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		393AB786532EDE5ECEA62225 /* Pods_OdaiApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B84E808BCF9B3F5C1F9A7CEB /* Pods_OdaiApp.framework */; };
 		6C212C7C2655A06D00B41358 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C212C7B2655A06D00B41358 /* CommentModel.swift */; };
+		6C212C7F2656CB5900B41358 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C212C7D2656CB5900B41358 /* CustomCell.swift */; };
+		6C212C802656CB5900B41358 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6C212C7E2656CB5900B41358 /* CustomCell.xib */; };
 		6CA11CF02654DE5800DD7464 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA11CEF2654DE5800DD7464 /* AppDelegate.swift */; };
 		6CA11CF22654DE5800DD7464 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA11CF12654DE5800DD7464 /* SceneDelegate.swift */; };
 		6CA11CF42654DE5800DD7464 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA11CF32654DE5800DD7464 /* ViewController.swift */; };
@@ -24,6 +26,8 @@
 
 /* Begin PBXFileReference section */
 		6C212C7B2655A06D00B41358 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
+		6C212C7D2656CB5900B41358 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		6C212C7E2656CB5900B41358 /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		6CA11CEC2654DE5800DD7464 /* OdaiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OdaiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CA11CEF2654DE5800DD7464 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CA11CF12654DE5800DD7464 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 			children = (
 				6CF14CF72655457300EF3F40 /* AnswersModel.swift */,
 				6C212C7B2655A06D00B41358 /* CommentModel.swift */,
+				6C212C7D2656CB5900B41358 /* CustomCell.swift */,
+				6C212C7E2656CB5900B41358 /* CustomCell.xib */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -184,6 +190,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C212C802656CB5900B41358 /* CustomCell.xib in Resources */,
 				6CA11CFC2654DE5A00DD7464 /* LaunchScreen.storyboard in Resources */,
 				6CA11CF92654DE5A00DD7464 /* Assets.xcassets in Resources */,
 				6CA11CF72654DE5800DD7464 /* Main.storyboard in Resources */,
@@ -244,6 +251,7 @@
 				6C212C7C2655A06D00B41358 /* CommentModel.swift in Sources */,
 				6CA11D052654F5B900DD7464 /* LoginViewController.swift in Sources */,
 				6CF14CF82655457300EF3F40 /* AnswersModel.swift in Sources */,
+				6C212C7F2656CB5900B41358 /* CustomCell.swift in Sources */,
 				6CA11CF42654DE5800DD7464 /* ViewController.swift in Sources */,
 				6CA11CF02654DE5800DD7464 /* AppDelegate.swift in Sources */,
 				6CF14CF526553DE600EF3F40 /* CheckViewController.swift in Sources */,
