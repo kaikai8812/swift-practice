@@ -78,6 +78,7 @@ class CheckViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         self.dataSets.append(answerModel)
                     }
                 }
+                self.dataSets.reverse()
                 //for文でデータを配列に入れ終わったら、tableViewをリロードして、反映させる。
                 self.tableView.reloadData()
             }

@@ -103,6 +103,7 @@ class CommentViewController: UIViewController,UITableViewDelegate, UITableViewDa
                         self.dataSets.append(commentModel)
                     }
                 }
+                self.dataSets.reverse()
                 self.tableView.reloadData()
             }
         }
@@ -130,6 +131,9 @@ class CommentViewController: UIViewController,UITableViewDelegate, UITableViewDa
         commentLabel.numberOfLines = 0
         commentLabel.text = "\(dataSets[indexPath.row].userName)君の\n\(self.dataSets[indexPath.row].comment)"
         
+        //セルの選択ハイライト表示を消す方法
+        cell.selectionStyle = .none
+
         return cell
         
     }
@@ -137,8 +141,24 @@ class CommentViewController: UIViewController,UITableViewDelegate, UITableViewDa
     
     @IBAction func sendAction(_ sender: Any) {
         
+        if textField.text == nil {
+            return
+        }
+        
         db.collection("Answers").document(idString).collection("comment").document().setData(["userName" : userName as Any, "comment": textField.text as Any, "postDate": Date().timeIntervalSince1970])
+        
+        //textFieldの中身を空にする
+        textField.text = ""
+        
+        //textFieldに書き込むことができるキーボードが閉じる！
+        textField.resignFirstResponder()
+        
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        textField.resignFirstResponder()
+    }
+    
     
     
     
