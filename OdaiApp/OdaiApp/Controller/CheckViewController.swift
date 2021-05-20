@@ -40,7 +40,8 @@ class CheckViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        
+        self.navigationController?.isNavigationBarHidden = false
+        loadData()
         
     }
     
@@ -68,6 +69,8 @@ class CheckViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     //もし、各値が存在していたら（doc.documentIDで、ランダムなIDを生成する（後々、この値を用いてどのデータかを識別するため。））
                     if let answer = data["answer"] as? String, let userName = data["userName"] as? String, let docID = doc.documentID as? String  {
                         
+                        print(answer)
+                        print("aoyama")
                         //answersModel型（構造体）のデータを作成
                         let answerModel = AnswersModel(answers: answer, userName: userName, docID: docID)
                         

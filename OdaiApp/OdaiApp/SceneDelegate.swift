@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -13,9 +14,34 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        
+        if Auth.auth().currentUser != nil {
+            //ログインしているユーザーがなかった場合は、お題がある画面(ViewController)に遷移する
+            let window = UIWindow(windowScene: scene as! UIWindowScene)
+            self.window = window
+            
+            //適用させるストーリーボードを指定する
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            //遷移したいcontrollerをここで指定する
+            let viewContoller = storyBoard.instantiateViewController(identifier: "viewVC")
+            //遷移させたいviewControllerをルートにもつnavigationController型のデータを作成する
+            let navVC = UINavigationController(rootViewController: viewContoller)
+            //windowのルートに、遷移させたいviewControllerをルートにもつnavigationControllerを設定する
+            window.rootViewController = navVC
+        }else{
+            let window = UIWindow(windowScene: scene as! UIWindowScene)
+            self.window = window
+            
+            //適用させるストーリーボードを指定する
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            //遷移したいcontrollerをここで指定する
+            let viewContoller = storyBoard.instantiateViewController(identifier: "LoginVC")
+            //遷移させたいviewControllerをルートにもつnavigationController型のデータを作成する
+            let navVC = UINavigationController(rootViewController: viewContoller)
+            //windowのルートに、遷移させたいviewControllerをルートにもつnavigationControllerを設定する
+            window.rootViewController = navVC
+        }
+      
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 

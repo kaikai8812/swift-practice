@@ -105,6 +105,19 @@ class ViewController: UIViewController {
     }
     
     
+    @IBAction func logout(_ sender: Any) {
+        
+        let firebaseAuth = Auth.auth()
+        
+        do {
+            try firebaseAuth.signOut()
+        } catch let error as NSError {
+            print("error",error)
+        }
+        
+        //前画面に戻る処理
+        navigationController?.popViewController(animated: true)
+    }
     
     
 
