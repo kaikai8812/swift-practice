@@ -22,6 +22,8 @@ class CheckViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var odaiLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

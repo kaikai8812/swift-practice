@@ -10,5 +10,5 @@ import Foundation
 struct AnswersModel {
     let answers:String
     let userName:String
-    let docID:String  //多分だけど、コメント機能でどのコメントか判別するのにつかうのでは？？
+    let docID:String  //多分だけど、コメント機能でどのコメントか判別するのにつかうのでは？？　-> 正解！
 }

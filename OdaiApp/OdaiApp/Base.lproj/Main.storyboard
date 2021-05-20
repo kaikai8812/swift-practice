@@ -242,21 +242,26 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="58" id="lHS-V9-8Qt">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="58" id="lHS-V9-8Qt">
                                         <rect key="frame" x="0.0" y="24.5" width="375" height="58"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lHS-V9-8Qt" id="JfN-5Z-gpf">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="58"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zld-Rj-bqG">
-                                                    <rect key="frame" x="28" y="18" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zld-Rj-bqG">
+                                                    <rect key="frame" x="26" y="21" width="343" height="36"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Zld-Rj-bqG" firstAttribute="leading" secondItem="JfN-5Z-gpf" secondAttribute="leadingMargin" constant="10" id="3YX-Hi-KQX"/>
+                                                <constraint firstItem="Zld-Rj-bqG" firstAttribute="bottom" secondItem="JfN-5Z-gpf" secondAttribute="bottomMargin" constant="10" id="Ie7-9B-FkN"/>
+                                                <constraint firstItem="Zld-Rj-bqG" firstAttribute="trailing" secondItem="JfN-5Z-gpf" secondAttribute="trailingMargin" constant="10" id="TMC-cp-SoQ"/>
+                                                <constraint firstItem="Zld-Rj-bqG" firstAttribute="top" secondItem="JfN-5Z-gpf" secondAttribute="topMargin" constant="10" id="kRj-Xv-abu"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
@@ -272,6 +277,9 @@
                                 <rect key="frame" x="298" y="617" width="48" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="send"/>
+                                <connections>
+                                    <action selector="sendAction:" destination="pyf-9c-XCQ" eventType="touchUpInside" id="F8Z-bm-C9c"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHv-fI-hOE">
                                 <rect key="frame" x="50" y="91" width="274" height="126"/>
@@ -288,7 +296,9 @@
                     <navigationItem key="navigationItem" id="Wpa-Cu-SnZ"/>
                     <connections>
                         <outlet property="kaitouLabel" destination="HHv-fI-hOE" id="HzB-3q-kO3"/>
+                        <outlet property="sendButton" destination="CFt-ce-dFS" id="ge8-Jl-HZg"/>
                         <outlet property="tableView" destination="5MX-j8-UcO" id="4iU-Qd-N9k"/>
+                        <outlet property="textField" destination="u9S-BQ-TOi" id="eX9-Vt-FOf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWI-XA-FsA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
