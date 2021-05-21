@@ -127,7 +127,7 @@ class CheckViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomCell
         
         //ラベルの文字の多さによって、大きさが自動で変わるセルを作成する
-        tableView.rowHeight = 200 //各セルのデフォルトの高さを指定。
+        tableView.rowHeight = 150 //各セルのデフォルトの高さを指定。
         
         //いいね機能実装の際の記述 ↓
         cell.answerLabel.numberOfLines = 0

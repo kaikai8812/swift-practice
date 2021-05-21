@@ -16,30 +16,38 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="diU-wB-k9D">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="diU-wB-k9D">
                         <rect key="frame" x="20" y="10" width="335" height="42"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AnV-kh-tsE">
-                        <rect key="frame" x="321" y="48" width="10" height="14"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AnV-kh-tsE">
+                        <rect key="frame" x="305" y="30" width="11" height="21.5"/>
+                        <color key="backgroundColor" red="0.82415442289999996" green="1" blue="0.65561993750000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ki6-cW-sDI">
-                        <rect key="frame" x="330" y="46" width="20" height="20"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ki6-cW-sDI">
+                        <rect key="frame" x="336" y="25" width="34" height="34"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="34" id="gab-KP-SyV"/>
+                            <constraint firstAttribute="width" constant="34" id="wzy-h8-de6"/>
+                        </constraints>
                         <state key="normal" image="notlike"/>
                     </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
+                    <constraint firstItem="AnV-kh-tsE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="Cf5-qj-6ix"/>
                     <constraint firstAttribute="trailing" secondItem="diU-wB-k9D" secondAttribute="trailing" constant="20" symbolic="YES" id="NxR-Fy-ej4"/>
+                    <constraint firstItem="ki6-cW-sDI" firstAttribute="leading" secondItem="AnV-kh-tsE" secondAttribute="trailing" constant="20" id="Rzm-lt-RsN"/>
+                    <constraint firstItem="ki6-cW-sDI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="VOx-to-HC0"/>
                     <constraint firstAttribute="bottom" secondItem="diU-wB-k9D" secondAttribute="bottom" constant="11" id="Xs3-9m-Tra"/>
                     <constraint firstItem="diU-wB-k9D" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="Y6U-RP-Af4"/>
+                    <constraint firstAttribute="trailing" secondItem="ki6-cW-sDI" secondAttribute="trailing" constant="5" id="j7j-Jf-KBr"/>
                     <constraint firstItem="diU-wB-k9D" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="vpK-Hl-JKF"/>
                 </constraints>
             </tableViewCellContentView>
