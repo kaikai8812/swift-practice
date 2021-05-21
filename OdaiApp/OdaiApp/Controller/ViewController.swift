@@ -10,7 +10,7 @@ import Firebase
 import FirebaseFirestore
 import EMAlertController
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UITextViewDelegate {
     
     //お題データを受信するデータベースの場所を設定
     let db1 = Firestore.firestore().collection("Odai").document("6fqTXCag3aCbkQM1RwIZ")
@@ -36,6 +36,8 @@ class ViewController: UIViewController {
         if UserDefaults.standard.object(forKey: "userName") != nil{
             userName = UserDefaults.standard.object(forKey: "userName") as! String
         }
+        
+        textview.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,13 +48,17 @@ class ViewController: UIViewController {
         
         if UserDefaults.standard.object(forKey: "documentID") != nil {
             idString = UserDefaults.standard.object(forKey: "documentID") as! String
+            print(idString)
+            print("aoyama")
         }else{
-            //ここで持ってきてるdocumentは、すでに一意に特定されているのか？まだ、どのドキュメントかはわかっていないのではないか？？
+            //setDataを使わなければ、データがfireStoreに保存されないが、パスを持ってくることはできる
             idString = Firestore.firestore().collection("Answers").document().path
             print(idString)
             idString = String(idString.dropFirst(8))
             UserDefaults.standard.setValue(idString, forKey: "documentID")
         }
+        print(idString)
+        print("aoyama")
         
     }
     
@@ -79,7 +85,7 @@ class ViewController: UIViewController {
         
         
         //いいねを含めた際での処理
-        db2.collection("Answers").document(idString).setData(["answer" : textview.text as Any, "userName": userName as Any, "postDate":Date().timeIntervalSince1970, "like":0, "likeFlagDic":[idString:false] ])
+        db2.collection("Answers").document(idString).setData(["answer" : textview.text as Any, "userName": userName as Any, "postDate":Date().timeIntervalSince1970, "like":0, "likeFlagDic":[idString:false]])
         
         
         //setDataの方は、コメントアウトしています。
@@ -141,6 +147,9 @@ class ViewController: UIViewController {
     }
     
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        textview.resignFirstResponder()
+    }
 
 
 }

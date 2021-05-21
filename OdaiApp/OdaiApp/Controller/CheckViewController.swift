@@ -16,7 +16,7 @@ class CheckViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     var odaiString = String()
     
-    var dataSets = [AnswersModel]()
+    var dataSets:[AnswersModel] = []
     
     let db = Firestore.firestore()
     
@@ -32,10 +32,14 @@ class CheckViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.reloadData()
+//        tableView.reloadData()
         
         //カスタムセルを使用する際の記述
         tableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "Cell")
+        
+        if UserDefaults.standard.object(forKey: "documentID") != nil {
+            idString = UserDefaults.standard.object(forKey: "documentID") as! String
+        }
         
         // Do any additional setup after loading the view.
     }
@@ -52,7 +56,7 @@ class CheckViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func loadData() {
         
         //DB上のAnswersを、取ってくる
-        db.collection("Answers").addSnapshotListener { snapShot, error in
+        db.collection("Answers").order(by: "postDate").addSnapshotListener { snapShot, error in
             
             self.dataSets = []
             
@@ -73,6 +77,7 @@ class CheckViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     //いいね追加の際の記述↓
                     if let answer = data["answer"] as? String, let userName = data["userName"] as? String, let likeCount = data["like"] as? Int, let likeFlagDic = data["likeFlagDic"] as? Dictionary<String,Bool>{
                         
+                        //ここで判断しているのは、fireStoreからとってきたlikeFlagDicの値の中に、ドキュメントのidがしっかり保存されているかを確認している
                         if likeFlagDic["\(doc.documentID)"] != nil{
                             let answerModel = AnswersModel(answers: answer, userName: userName, docID: doc.documentID, likeCount: likeCount, likeFlagDic: likeFlagDic)
                             
@@ -83,7 +88,7 @@ class CheckViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     
                     
                     
-                    //もし、各値が存在していたら（doc.documentIDで、ランダムなIDを生成する（後々、この値を用いてどのデータかを識別するため。））
+                    //もし、各値が存在していたら（doc.documentIDで、ドキュメントIDを取得している。（後々、この値を用いてどのデータかを識別するため。））
 //                    if let answer = data["answer"] as? String, let userName = data["userName"] as? String, let docID = doc.documentID as? String  {
 //
 //                        print(answer)
@@ -95,7 +100,7 @@ class CheckViewController: UIViewController, UITableViewDelegate, UITableViewDat
 //                        self.dataSets.append(answerModel)
 //                    }
                 }
-                self.dataSets.reverse()
+//                self.dataSets.reverse()
                 //for文でデータを配列に入れ終わったら、tableViewをリロードして、反映させる。
                 self.tableView.reloadData()
             }
@@ -139,12 +144,11 @@ class CheckViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let flag = dataSets[indexPath.row].likeFlagDic[idString]
             
             //もし、いいねが押されていたら　== 値がtrueだったら、cellのlikeButtonのイメージを、セットする。(bUIButtonのため、setImageを用いる。)
-            if flag as! Bool == true{
+            if flag! as! Bool == true{
                 cell.likeButton.setImage(UIImage(named: "like"), for: .normal)
             } else {
-                cell.likeButton.setImage(UIImage(named: "nolike"), for: .normal)
+                cell.likeButton.setImage(UIImage(named: "notlike"), for: .normal)
             }
-            
         }
         //いいね機能実装の際の記述 ↑
         
@@ -167,25 +171,23 @@ class CheckViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         //ここでのsenderは、tableviewでのlikeButtonのことを指す。だから、tagのプロパティを使用することができる。
         //かつ、現在の
-        var flag = self.dataSets[sender.tag].likeFlagDic[idString]
+        let flag = self.dataSets[sender.tag].likeFlagDic[idString]
         
         //もし、
         if flag == nil {
             count = self.dataSets[sender.tag].likeCount + 1
-            db.collection("Answers").document(dataSets[sender.tag].docID).setData(["likeFlagDic " : [idString:true]], merge: true)
-            
-            
+            db.collection("Answers").document(dataSets[sender.tag].docID).setData(["likeFlagDic":[idString:true]], merge: true)
+
         } else {
             
             if flag as! Bool == true {
                 count = self.dataSets[sender.tag].likeCount - 1
-                db.collection("Answers").document(dataSets[sender.tag].docID).setData(["likeFlagDic " : [idString:false]], merge: true)
+                db.collection("Answers").document(dataSets[sender.tag].docID).setData(["likeFlagDic":[idString:false]], merge: true)
             }else{
                 count = self.dataSets[sender.tag].likeCount + 1
-                db.collection("Answers").document(dataSets[sender.tag].docID).setData(["likeFlagDic " : [idString:false]], merge: true)
+                db.collection("Answers").document(dataSets[sender.tag].docID).setData(["likeFlagDic":[idString:true]], merge: true)
             }
         }
-        
         //count情報を送信
         db.collection("Answers").document(dataSets[sender.tag].docID).updateData(["like" : count], completion: nil)
         tableView.reloadData()
