@@ -77,6 +77,8 @@ class SelectRoomViewController: UIViewController, UITableViewDelegate, UITableVi
             
             //画面遷移
             let timeLineVC = self.storyboard?.instantiateViewController(identifier: "timeLineVC") as! TimeLineViewController
+            
+            //roomNumberを値として送信
             timeLineVC.roomNumber = indexPath.row
             self.navigationController?.pushViewController(timeLineVC, animated: true)
         }

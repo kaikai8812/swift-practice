@@ -121,7 +121,7 @@
         <!--Time Line View Controller-->
         <scene sceneID="tXa-Lj-38a">
             <objects>
-                <viewController storyboardIdentifier="timelineVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Qhr-xs-YEG" customClass="TimeLineViewController" customModule="instagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="timeLineVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Qhr-xs-YEG" customClass="TimeLineViewController" customModule="instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LIj-9v-N9U">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -170,6 +170,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.82415442289999996" green="1" blue="0.65561993750000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="plus"/>
+                                <connections>
+                                    <action selector="openCamera:" destination="Qhr-xs-YEG" eventType="touchUpInside" id="RUg-A1-SmS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TXx-dc-g7m"/>
@@ -184,10 +187,10 @@
             </objects>
             <point key="canvasLocation" x="2208.8000000000002" y="130.88455772113943"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit View Controller-->
         <scene sceneID="6IO-pt-rOX">
             <objects>
-                <viewController id="Ksz-wS-XfB" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="editVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ksz-wS-XfB" customClass="EditViewController" customModule="instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1vV-RD-mz2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -220,11 +223,21 @@
                                 <state key="normal" title="送信">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="send:" destination="Ksz-wS-XfB" eventType="touchUpInside" id="8ao-pK-5pS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wfa-ed-0eh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="contentImageView" destination="zuR-FM-1As" id="vO6-ye-JDd"/>
+                        <outlet property="profileImageView" destination="H0e-xT-Vb4" id="bVL-Gj-2NZ"/>
+                        <outlet property="sendButton" destination="8Vq-4C-jIQ" id="q3t-YV-Qdz"/>
+                        <outlet property="textField" destination="Mpp-fe-jLa" id="UTq-iK-U8A"/>
+                        <outlet property="userNameLabel" destination="a7C-a9-f6C" id="Hx6-cW-Jpk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qy7-cr-m1a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

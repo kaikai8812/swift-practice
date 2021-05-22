@@ -32,7 +32,7 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
         
         //匿名ログイン
         
-        Auth.auth().signInAnonymously { resut, error in
+        Auth.auth().signInAnonymously { [self] resut, error in
             
             if error != nil {
                 return
@@ -46,9 +46,16 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
             //sendDBModelに引数として送るためにデータ化する。
             let data = self.plofileImageView.image?.jpegData(compressionQuality: 0.01)
             
+            if data == nil {
+                print("画像選択なし")
+                return
+            }
+            
             //モデルで定義したメソッドを使用
             let sendDBModel = SendDBModel()
             sendDBModel.sendProfileImageData(data: data!)
+            
+            UserDefaults.standard.set(textField.text, forKey: "userName")
             
             
             self.navigationController?.pushViewController(selectVC, animated: true)

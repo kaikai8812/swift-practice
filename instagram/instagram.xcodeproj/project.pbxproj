@@ -18,6 +18,7 @@
 		6C7069F0265911A9006EA6B7 /* SelectRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7069EF265911A9006EA6B7 /* SelectRoomViewController.swift */; };
 		6C7069F2265915F7006EA6B7 /* SendDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7069F1265915F7006EA6B7 /* SendDBModel.swift */; };
 		6C7069F426592E79006EA6B7 /* TimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7069F326592E79006EA6B7 /* TimeLineViewController.swift */; };
+		6C7069F6265946BC006EA6B7 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7069F5265946BC006EA6B7 /* EditViewController.swift */; };
 		92D618499A5203FF94AE6E19 /* Pods_instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384D45AD4BC2A5E6805B8C4C /* Pods_instagram.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		6C7069EF265911A9006EA6B7 /* SelectRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRoomViewController.swift; sourceTree = "<group>"; };
 		6C7069F1265915F7006EA6B7 /* SendDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendDBModel.swift; sourceTree = "<group>"; };
 		6C7069F326592E79006EA6B7 /* TimeLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineViewController.swift; sourceTree = "<group>"; };
+		6C7069F5265946BC006EA6B7 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		FDAE412BE41867B99130FE6D /* Pods-instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagram.release.xcconfig"; path = "Target Support Files/Pods-instagram/Pods-instagram.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +94,7 @@
 				6C7069D92657C827006EA6B7 /* LoginViewController.swift */,
 				6C7069EF265911A9006EA6B7 /* SelectRoomViewController.swift */,
 				6C7069F326592E79006EA6B7 /* TimeLineViewController.swift */,
+				6C7069F5265946BC006EA6B7 /* EditViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C7069F6265946BC006EA6B7 /* EditViewController.swift in Sources */,
 				6C7069F0265911A9006EA6B7 /* SelectRoomViewController.swift in Sources */,
 				6C7069DA2657C827006EA6B7 /* LoginViewController.swift in Sources */,
 				6C7069F426592E79006EA6B7 /* TimeLineViewController.swift in Sources */,
