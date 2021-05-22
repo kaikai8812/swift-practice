@@ -11,7 +11,9 @@ import Photos
 import ActiveLabel
 import SDWebImage
 
-class TimeLineViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITableViewDelegate, UITableViewDataSource {
+class TimeLineViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITableViewDelegate, UITableViewDataSource,LoadOKDelegate {
+    
+    
     
     
     //SelectRoomViewから、roomnumberは取得済み
@@ -27,6 +29,10 @@ class TimeLineViewController: UIViewController, UINavigationControllerDelegate, 
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        loadDBModel.loadContents(roomnumber: String(roomNumber))
+        loadDBModel.loadOKDelegate = self
+        
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -44,7 +50,9 @@ class TimeLineViewController: UIViewController, UINavigationControllerDelegate, 
         return loadDBModel.dataSets.count
     }
     
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 500
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
@@ -71,6 +79,12 @@ class TimeLineViewController: UIViewController, UINavigationControllerDelegate, 
         commetLabel.handleHashtagTap { (hashtag) in
             
             print(hashtag)
+            
+        //ハッシュタグviewへの画面遷移
+            let hashVC = self.storyboard?.instantiateViewController(identifier: "hashVC") as! HashTagViewController
+            //ハッシュタグの文字列を渡す。
+            hashVC.hashTag = hashtag
+            self.navigationController?.pushViewController(hashVC, animated: true)
             
         }
         
@@ -179,6 +193,13 @@ class TimeLineViewController: UIViewController, UINavigationControllerDelegate, 
         alertController.addAction(action2)
         alertController.addAction(action3)
         self.present(alertController, animated: true, completion: nil)
+        
+    }
+    
+    func loadOK(check: Int) {
+        if check == 1 {
+            tableView.reloadData()
+        }
         
     }
     

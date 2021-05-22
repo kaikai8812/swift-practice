@@ -46,6 +46,12 @@ class EditViewController: UIViewController {
             userImageString = UserDefaults.standard.object(forKey: "userImage") as! String
         }
         
+        profileImageView.sd_setImage(with: URL(string: userImageString), completed: nil)
+        userNameLabel.text = userName
+        contentImageView.image = passImage
+        
+        profileImageView.layer.cornerRadius = 45.0
+        
         
     }
     

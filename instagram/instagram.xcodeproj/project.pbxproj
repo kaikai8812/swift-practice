@@ -22,6 +22,7 @@
 		6C7069F826597116006EA6B7 /* LoadDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7069F726597116006EA6B7 /* LoadDBModel.swift */; };
 		6C7069FA26597127006EA6B7 /* DataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7069F926597127006EA6B7 /* DataSet.swift */; };
 		6C7069FC26599F83006EA6B7 /* HashTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7069FB26599F83006EA6B7 /* HashTagViewController.swift */; };
+		6C7069FE2659AD83006EA6B7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7069FD2659AD83006EA6B7 /* DetailViewController.swift */; };
 		92D618499A5203FF94AE6E19 /* Pods_instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 384D45AD4BC2A5E6805B8C4C /* Pods_instagram.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		6C7069F726597116006EA6B7 /* LoadDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadDBModel.swift; sourceTree = "<group>"; };
 		6C7069F926597127006EA6B7 /* DataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSet.swift; sourceTree = "<group>"; };
 		6C7069FB26599F83006EA6B7 /* HashTagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTagViewController.swift; sourceTree = "<group>"; };
+		6C7069FD2659AD83006EA6B7 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		FDAE412BE41867B99130FE6D /* Pods-instagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instagram.release.xcconfig"; path = "Target Support Files/Pods-instagram/Pods-instagram.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +104,7 @@
 				6C7069F326592E79006EA6B7 /* TimeLineViewController.swift */,
 				6C7069F5265946BC006EA6B7 /* EditViewController.swift */,
 				6C7069FB26599F83006EA6B7 /* HashTagViewController.swift */,
+				6C7069FD2659AD83006EA6B7 /* DetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				6C7069F6265946BC006EA6B7 /* EditViewController.swift in Sources */,
 				6C7069FC26599F83006EA6B7 /* HashTagViewController.swift in Sources */,
 				6C7069F0265911A9006EA6B7 /* SelectRoomViewController.swift in Sources */,
+				6C7069FE2659AD83006EA6B7 /* DetailViewController.swift in Sources */,
 				6C7069DA2657C827006EA6B7 /* LoginViewController.swift in Sources */,
 				6C7069F426592E79006EA6B7 /* TimeLineViewController.swift in Sources */,
 				6C7069F826597116006EA6B7 /* LoadDBModel.swift in Sources */,
