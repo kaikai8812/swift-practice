@@ -12,7 +12,7 @@ class EditViewController: UIViewController {
     
     //roomの判別のため
     var roomNumber = Int()
-    //投稿の画像を受け取るため。
+    //投稿の画像を受け取っている。
     var passImage = UIImage()
     
     var userName = String()
@@ -100,17 +100,43 @@ class EditViewController: UIViewController {
             return
         }
         
+        //textFieldの中からハッシュタグを見つけ、見つけたハッシュタグを引数にsendDataModelのメソッドを読んでいる。
+        searchHashTag()
+        
+        
         //前回のコントローラーから渡ってきた投稿する画像imageを、データ型に変換する。
         let passData = passImage.jpegData(compressionQuality: 0.01)
         
         //sendDBModelをインスタンス化
         let sendDBModel = SendDBModel(userID: String(Auth.auth().currentUser!.uid), userName: userName, comment: textField.text!, userImageString: userImageString, contentImageData: passData!)
         
-        //fireStoreへ投稿データを送信するメソッドを呼び出す
+        //fireStoreへ投稿データを送信するメソッドを呼び出す(ルームナンバーで管理)
         sendDBModel.sendData(roomNumber: String(roomNumber))
         
         self.navigationController?.popViewController(animated: true)
         
+    }
+    
+    
+    //ハッシュタグ関係のメソッド
+    func searchHashTag(){
+        
+        let hashTagText = textField.text as NSString?
+        do{
+            let regex = try NSRegularExpression(pattern: "#\\S+", options: [])
+            //見つけたハッシュタグを、for文で回しているっぽい・
+            for match in regex.matches(in: hashTagText! as String, options: [], range: NSRange(location: 0, length: hashTagText!.length)) {
+                
+                //投稿写真のdata化
+                let passedData = self.passImage.jpegData(compressionQuality: 0.01)
+                //sendDBModelのインスタンス化
+                let sendDBModel = SendDBModel(userID: Auth.auth().currentUser!.uid, userName: self.userName, comment: self.textField.text!, userImageString:self.userImageString,contentImageData:passedData!)
+                //見つけたハッシュタグで、モデルメソッドを発動
+                sendDBModel.sendHashTag(hashTag: hashTagText!.substring(with: match.range))
+            }
+        }catch{
+            
+        }
     }
     
     

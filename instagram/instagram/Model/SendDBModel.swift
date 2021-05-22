@@ -60,7 +60,7 @@ class SendDBModel {
     }
             
             
-            //プロフィール画像を保存し、館員登録するためのメソッド
+            //プロフィール画像を保存し、会員登録するためのメソッド
             func sendProfileImageData(data:Data) {
                 
                 //関数の引数で受け取ったデータを、UIImage型で、imageに格納
@@ -94,5 +94,33 @@ class SendDBModel {
                     }
                 }
             }
+    
+    //ハッシュタグ用の関数。各ハッシュタグのルームを作成するような感じ
+    func sendHashTag(hashTag:String) {
+        //FireStorageの、Imagesフォルダの中に、一意の文字列+その時の日付+jpgというデータの保存先を変数に入れたイメージ
+        let imageRef = Storage.storage().reference().child("hashTag").child("\(UUID().uuidString + String(Date().timeIntervalSince1970)).jpg")
+        
+        //imageRefという保存先に、というデータをまずは保存する。
+        imageRef.putData(Data(contentImageData), metadata: nil) { metadata, error in
+            
+            if error != nil {
+                print(error.debugDescription)
+                return
+            }
+            
+            //投稿画像URlが変数urlに保存される。
+            imageRef.downloadURL { [self] url, error in
+                
+                if error != nil {
+                    print(error.debugDescription)
+                    return
+                }
+                
+                //hashTagをキーにして、辞書型で以下のデータを保存する。
+                self.db.collection(hashTag).document().setData(["userID" : self.userID as Any, "userName" : self.userName as Any, "comment" : self.comment as Any, "userImage" : self.userImageString, "contentImage" : url?.absoluteString as Any, "postDate" : Date().timeIntervalSince1970 ])
+                
+            }
+        }
+    }
 
 }
