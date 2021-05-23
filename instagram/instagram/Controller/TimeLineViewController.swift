@@ -41,13 +41,16 @@ class TimeLineViewController: UIViewController, UINavigationControllerDelegate, 
         self.navigationController?.isNavigationBarHidden = false
         
         loadDBModel.loadContents(roomnumber: String(roomNumber))
+        print(roomNumber)
         
     }
     
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(loadDBModel.dataSets.count)
         return loadDBModel.dataSets.count
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -69,7 +72,8 @@ class TimeLineViewController: UIViewController, UINavigationControllerDelegate, 
         //投稿画像を設定
         let contentImageView = cell.contentView.viewWithTag(3) as! UIImageView
         contentImageView.sd_setImage(with: URL(string: loadDBModel.dataSets[indexPath.row].contentImage), completed: nil)
-        
+        print(loadDBModel.dataSets[indexPath.row].contentImage)
+        print("aoyama")
         //コメントを設定(ActiveLabelを用いて、ハッシュタグが使えるようにする。)
         let commetLabel = cell.contentView.viewWithTag(4) as! ActiveLabel   //as! ActiveLabelをつける！
         commetLabel.enabledTypes = [.hashtag]  //使用するタグをどのようなものにするか確認
@@ -98,7 +102,6 @@ class TimeLineViewController: UIViewController, UINavigationControllerDelegate, 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
     
     @IBAction func openCamera(_ sender: Any) {
         

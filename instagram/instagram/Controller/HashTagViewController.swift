@@ -77,7 +77,7 @@ class HashTagViewController: UIViewController, UICollectionViewDelegate,UICollec
     //cellをタップした際の動き
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let detailVC = self.storyboard?.instantiateViewController(identifier: "detailsVC") as! DetailViewController
+        let detailVC = self.storyboard?.instantiateViewController(identifier: "detailVC") as! DetailViewController
 
         detailVC.userName = loadDBModel.dataSets[indexPath.row].userName
         detailVC.comment = loadDBModel.dataSets[indexPath.row].comment

@@ -40,9 +40,17 @@ class LoadDBModel {
                         
                         
                         let newDataSet = DataSet(userID: userID, userName: userName, comment: comment, profileImage: profileImage, postDate: postDate, contentImage: contentImage)
+                        print("newdataSet")
+                        print(newDataSet)
                         
                         self.dataSets.append(newDataSet)
+                        
+                        print("datasets")
+                        print(self.dataSets.count)
+                        
                         self.dataSets.reverse()
+                        
+                        self.loadOKDelegate?.loadOK(check: 1)
                     }
                     
                 }
