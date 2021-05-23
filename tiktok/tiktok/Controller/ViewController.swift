@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import MobileCoreServices
 
 class ViewController: UIViewController {
 
@@ -16,7 +15,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
-        viewWillAppear(animated)
+        super.viewWillAppear(animated)
         
         self.navigationController?.isNavigationBarHidden = true
         

@@ -14,6 +14,12 @@
 		6C82D7A7265A581B00433672 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C82D7A6265A581B00433672 /* Assets.xcassets */; };
 		6C82D7AA265A581B00433672 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C82D7A8265A581B00433672 /* LaunchScreen.storyboard */; };
 		6C82D7B3265A5D4900433672 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C82D7B2265A5D4900433672 /* ViewController.swift */; };
+		6C82D7B5265A657400433672 /* SetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C82D7B4265A657400433672 /* SetUpViewController.swift */; };
+		6C82D7BA265A68EE00433672 /* VAVideoCompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C82D7B9265A68EE00433672 /* VAVideoCompressor.swift */; };
+		6C82D7BC265A68FB00433672 /* AuthCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C82D7BB265A68FB00433672 /* AuthCheck.swift */; };
+		6C82D7BE265A690D00433672 /* SwiftyRecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C82D7BD265A690D00433672 /* SwiftyRecordButton.swift */; };
+		6C82D7C0265A691600433672 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C82D7BF265A691600433672 /* LoadingView.swift */; };
+		6CBD562E265AAFE2009ADC15 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBD562D265AAFE2009ADC15 /* EditViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +33,12 @@
 		6C82D7A9265A581B00433672 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6C82D7AB265A581B00433672 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C82D7B2265A5D4900433672 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6C82D7B4265A657400433672 /* SetUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpViewController.swift; sourceTree = "<group>"; };
+		6C82D7B9265A68EE00433672 /* VAVideoCompressor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VAVideoCompressor.swift; sourceTree = "<group>"; };
+		6C82D7BB265A68FB00433672 /* AuthCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthCheck.swift; sourceTree = "<group>"; };
+		6C82D7BD265A690D00433672 /* SwiftyRecordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyRecordButton.swift; sourceTree = "<group>"; };
+		6C82D7BF265A691600433672 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		6CBD562D265AAFE2009ADC15 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		CE88818B74B25E0E2BE4AC05 /* Pods-tiktok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tiktok.debug.xcconfig"; path = "Target Support Files/Pods-tiktok/Pods-tiktok.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +94,9 @@
 			children = (
 				6C82D79D265A581A00433672 /* AppDelegate.swift */,
 				6C82D79F265A581A00433672 /* SceneDelegate.swift */,
+				6C82D7B8265A68BA00433672 /* Util */,
+				6C82D7B7265A68B400433672 /* Model */,
+				6C82D7B6265A68AE00433672 /* View */,
 				6C82D7B1265A5D3800433672 /* Controller */,
 				6C82D7A3265A581A00433672 /* Main.storyboard */,
 				6C82D7A6265A581B00433672 /* Assets.xcassets */,
@@ -95,8 +110,35 @@
 			isa = PBXGroup;
 			children = (
 				6C82D7B2265A5D4900433672 /* ViewController.swift */,
+				6C82D7B4265A657400433672 /* SetUpViewController.swift */,
+				6CBD562D265AAFE2009ADC15 /* EditViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		6C82D7B6265A68AE00433672 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6C82D7BF265A691600433672 /* LoadingView.swift */,
+				6C82D7BD265A690D00433672 /* SwiftyRecordButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6C82D7B7265A68B400433672 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6C82D7BB265A68FB00433672 /* AuthCheck.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6C82D7B8265A68BA00433672 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				6C82D7B9265A68EE00433672 /* VAVideoCompressor.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,9 +255,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C82D7BC265A68FB00433672 /* AuthCheck.swift in Sources */,
+				6C82D7B5265A657400433672 /* SetUpViewController.swift in Sources */,
 				6C82D7B3265A5D4900433672 /* ViewController.swift in Sources */,
+				6C82D7BA265A68EE00433672 /* VAVideoCompressor.swift in Sources */,
+				6C82D7BE265A690D00433672 /* SwiftyRecordButton.swift in Sources */,
+				6C82D7C0265A691600433672 /* LoadingView.swift in Sources */,
 				6C82D79E265A581A00433672 /* AppDelegate.swift in Sources */,
 				6C82D7A0265A581A00433672 /* SceneDelegate.swift in Sources */,
+				6CBD562E265AAFE2009ADC15 /* EditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
