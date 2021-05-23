@@ -136,10 +136,10 @@
             </objects>
             <point key="canvasLocation" x="2428" y="115"/>
         </scene>
-        <!--View Controller-->
+        <!--Select Music View Controller-->
         <scene sceneID="SS9-O7-nIo">
             <objects>
-                <viewController id="VpH-ws-EwE" customClass="ViewController" customModule="tiktok" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="VpH-ws-EwE" customClass="SelectMusicViewController" customModule="tiktok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fco-bM-Mdu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -163,7 +163,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="楽曲名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t5D-7B-JuI">
                                                     <rect key="frame" x="124" y="11" width="209" height="33"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -199,6 +199,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="3GS-cx-drc"/>
+                    <connections>
+                        <outlet property="searchTextField" destination="nS0-hL-neT" id="foN-zN-g5Y"/>
+                        <outlet property="tableView" destination="iWV-ex-uG8" id="LJd-qV-XTK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XRh-ZT-qg8" sceneMemberID="firstResponder"/>
             </objects>
