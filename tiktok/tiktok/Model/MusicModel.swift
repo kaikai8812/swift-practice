@@ -34,6 +34,12 @@ class MusicModel {
                     let json:JSON = try JSON(data: responce.data!)
                     //for分を回して、引数で受け取った数分だけのデータを、配列に追加していく。
                     for i in 0...resultCount - 1{
+                        
+                        if json["results"][i]["artistName"].string == nil {
+                            print("ヒットしませんでした！")
+                            return
+                        }
+                        
                         self.artistNameArray.append(json["results"][i]["artistName"].string!)
                         self.trackCensoredNameArray.append(json["results"][i]["trackCensoredName"].string!)
                         self.preViewURLArray.append(json["results"][i]["previewUrl"].string!)

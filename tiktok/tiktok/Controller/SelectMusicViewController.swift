@@ -16,6 +16,7 @@ class SelectMusicViewController: UIViewController,UITableViewDelegate,UITableVie
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
+    var musicModel = MusicModel()
     var player = AVAudioPlayer()
     var videoPath = String()
     //前画面から、動画URLを受け取る
@@ -40,18 +41,94 @@ class SelectMusicViewController: UIViewController,UITableViewDelegate,UITableVie
             //パソコンが読める文字列に変換している。API公式サイトに、URLをエンコードした文字列を渡してね、と書いてあるためこのようにしている。
             let encodeUrlString:String = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
             
+            //モデルメソッドを使用して、検索に該当するデータを取得し、配列を準備する。
+            musicModel.setData(resultCount: 50, encodeUrlString: encodeUrlString)
+            //キーボードを閉じる
+            searchTextField.resignFirstResponder()
         }
         
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return musicModel.artistNameArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        
+        //cell内の要素をタグで管理
+        let artWorkImageView = cell.viewWithTag(1) as! UIImageView
+        let musicNameLabel = cell.viewWithTag(2) as! UILabel
+        let artistNameLabel = cell.viewWithTag(3) as! UILabel
+        
+        //JSON解析で得たデータを、cell要素に反映
+        artWorkImageView.sd_setImage(with: URL(string: musicModel.artWorkUrl100Array[indexPath.row]), completed:nil)
+        musicNameLabel.text = musicModel.trackCensoredNameArray[indexPath.row]
+        artistNameLabel.text = musicModel.artistNameArray[indexPath.row]
+        
+        
+        //favボタンを、プログラムで作成
+        let favButton = UIButton(frame: CGRect(x: 293, y: 33, width: 53, height: 53))
+        favButton.setImage(UIImage(named: "play"), for: .normal) //ここのnormal、変えるとどうなるかをあとで確認
+        favButton.addTarget(self, action: #selector(favButtonTap(_:)), for: .touchUpInside)
+        favButton.tag = indexPath.row
+        cell.contentView.addSubview(favButton)
+        
+        //プレビューボタン（音楽再生）をプログラムで作成
+        let playButton = UIButton(frame: CGRect(x: 16, y: 10, width: 100, height: 100))
+        playButton.setImage(UIImage(named: "play"), for: .normal)
+        playButton.addTarget(self, action: #selector(playButtonTap(_:)), for: .touchUpInside)
+        playButton.tag = indexPath.row
+        return cell
+        
     }
     
+    //プレビューボタンをタップした際に行う処理を記述する
+    //senderを用いることで、押されたボタン（UIButton）の情報がsenderに渡る。
+    //このことによって、別のスコープで定義したモノ（今回はtag番号）を使用して、処理に利用することができる。
+    @objc func playButtonTap(_ sender:UIButton) {
+        
+        if player.isPlaying == true {
+            player.stop()
+        }
+        
+        //タップしたセルのindexpath.rowを、senderを使用してこっちでも使用している。
+        let url = URL(string:musicModel.preViewURLArray[sender.tag])
+        downLoadMusicURL(url: url!)
+    }
+
+    //引数の音楽を再生する関数
+    //途中でどんな処理を行なっているのか等、確認する。
+    func downLoadMusicURL(url:URL) {
+        
+        var downLoadTask:URLSessionDownloadTask
+        downLoadTask = URLSession.shared.downloadTask(with: url, completionHandler: { url, response, error in
+         
+            print(url)
+            self.play(url: url!)
+        })
+        //タスクを再開するために記述。必要はないかも？？
+        downLoadTask.resume()
+    }
+    
+    //音楽を再生する関数
+    func play(url:URL){
+        
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player.prepareToPlay()
+            player.volume = 1.0
+            player.play()
+            
+        } catch let error as NSError {
+            print(error.debugDescription)
+        }
+    }
 
     /*
     // MARK: - Navigation
