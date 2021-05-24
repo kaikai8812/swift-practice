@@ -220,7 +220,7 @@
         <!--Share View Controller-->
         <scene sceneID="0Uu-1c-mhY">
             <objects>
-                <viewController storyboardIdentifier="shareVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xwz-vJ-nIe" customClass="ShareViewController" customModule="tiktok" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xwz-vJ-nIe" customClass="ShareViewController" customModule="tiktok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xzv-Rt-wNk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

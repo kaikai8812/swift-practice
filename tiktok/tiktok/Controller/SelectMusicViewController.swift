@@ -10,7 +10,9 @@ import SDWebImage
 import AVFoundation
 import SwiftVideoGenerator //音声と動画を合成する役割
 
-class SelectMusicViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
+class SelectMusicViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,MusicProtocol {
+  
+    
 
     
     @IBOutlet weak var searchTextField: UITextField!
@@ -47,15 +49,23 @@ class SelectMusicViewController: UIViewController,UITableViewDelegate,UITableVie
         
         if searchTextField.text?.isEmpty != true {
             
+            //ItunesAPIへアクセスするために使用
             let urlString = "https://itunes.apple.com/search?term=\(String(describing:searchTextField.text!))&entity=song&country=jp"
             
             //パソコンが読める文字列に変換している。API公式サイトに、URLをエンコードした文字列を渡してね、と書いてあるためこのようにしている。
             let encodeUrlString:String = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-            
+            musicModel.MusicDelegate = self  //この委任、もしviewdidload内で書いたらどうなるかを確認する
             //モデルメソッドを使用して、検索に該当するデータを取得し、配列を準備する。
             musicModel.setData(resultCount: 50, encodeUrlString: encodeUrlString)
             //キーボードを閉じる
             searchTextField.resignFirstResponder()
+        }
+    }
+    
+    //MusicModelのデリゲートメソッド(JSON解析によるデータを全て配列に準備できた際に、呼ばれるメソッド)
+    func catchData(count: Int) {
+        if count == 1 {
+            tableView.reloadData()
         }
     }
     

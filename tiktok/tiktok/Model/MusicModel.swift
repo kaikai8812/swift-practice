@@ -9,16 +9,23 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+protocol MusicProtocol {
+    func catchData(count:Int)
+}
+
 class MusicModel {
     var artistNameArray = [String]()
     var trackCensoredNameArray = [String]()
     var preViewURLArray = [String]()
     var artWorkUrl100Array = [String]()
     
+    //プロトコルのインスタンス化
+    var MusicDelegate:MusicProtocol?
+    
     func setData(resultCount:Int, encodeUrlString:String) {
         
         //APIとの通信
-        AF.request(encodeUrlString, method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { responce in
+        AF.request(encodeUrlString, method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { [self] responce in
             
             self.artistNameArray.removeAll()
             self.trackCensoredNameArray.removeAll()
@@ -45,6 +52,10 @@ class MusicModel {
                         self.preViewURLArray.append(json["results"][i]["previewUrl"].string!)
                         self.artWorkUrl100Array.append(json["results"][i]["artworkUrl100"].string!)
                     }
+                    
+                    //ここでデリゲートメソッドを作成し、他のコントローラに処理をさせる。
+                    self.MusicDelegate?.catchData(count: 1)
+                    
                 } catch  {
                     print("errorが起きました")
                 }

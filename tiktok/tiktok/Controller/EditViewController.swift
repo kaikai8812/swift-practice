@@ -47,6 +47,8 @@ class EditViewController: UIViewController {
         //初期化しなかったらどうなるのか、確認すること。
         playerController?.removeFromParent()
         player = nil
+        player = AVPlayer(url: url)
+        self.player?.volume = 1.0
         view.backgroundColor = .black
         
         //すでに宣言はしているが、メモリを確保するために再度宣言を行う???

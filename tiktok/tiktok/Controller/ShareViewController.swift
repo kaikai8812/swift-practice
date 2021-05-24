@@ -135,7 +135,7 @@ class ShareViewController: UIViewController {
     
         //シェアしたいitemは、動画、楽曲の情報、コメント
         //まず、シェアしたいモノをまとめたAny型の配列を作成
-        let activityItems = [passedURL as Any, "\(textView.text)\n\(captionString)\n#Swiftアプリ練習用"] as Any
+        let activityItems = [URL(string: passedURL) as Any, "\(textView.text)\n\(captionString)\n#Swiftアプリ練習用"] as Any
         
         let activityController = UIActivityViewController(activityItems: activityItems as! [Any], applicationActivities: nil)
         
