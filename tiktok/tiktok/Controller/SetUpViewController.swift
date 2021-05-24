@@ -72,8 +72,10 @@ class SetUpViewController: SwiftyCamViewController, SwiftyCamViewControllerDeleg
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         //選択した動画の情報が、infoに入ってくる
-        let imageURL = info[.imageURL] as! URL
-        videoURL = imageURL
+        print(info[.mediaURL])
+        print("kai")
+        let imageURL = info[.mediaURL]
+        videoURL = imageURL as? URL
         
         //pickerを閉じる
         picker.dismiss(animated: true, completion: nil)

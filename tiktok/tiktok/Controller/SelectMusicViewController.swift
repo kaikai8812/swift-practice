@@ -18,9 +18,13 @@ class SelectMusicViewController: UIViewController,UITableViewDelegate,UITableVie
     
     var musicModel = MusicModel()
     var player = AVAudioPlayer()
+    //音楽と動画を合成した動画URLを受け取る変数
     var videoPath = String()
     //前画面から、動画URLを受け取る
     var passedURL:URL?
+    
+    //遷移元から処理を受け取るクロージャのプロパティを用意
+    var resultHandler:((String,String,String) -> Void)?
     
     
     override func viewDidLoad() {
@@ -30,6 +34,13 @@ class SelectMusicViewController: UIViewController,UITableViewDelegate,UITableVie
         tableView.dataSource = self
         searchTextField.delegate = self
 
+    }
+    
+    //音楽を検索する際に利用
+    
+    
+    @IBAction func searchButton(_ sender: Any) {
+        refleshData()
     }
     
     func refleshData()  {
@@ -72,7 +83,7 @@ class SelectMusicViewController: UIViewController,UITableViewDelegate,UITableVie
         artistNameLabel.text = musicModel.artistNameArray[indexPath.row]
         
         
-        //favボタンを、プログラムで作成
+        //favボタンを、プログラムで作成(選択した音楽と、動画を合成して、EditViewControllerに返す。)
         let favButton = UIButton(frame: CGRect(x: 293, y: 33, width: 53, height: 53))
         favButton.setImage(UIImage(named: "play"), for: .normal) //ここのnormal、変えるとどうなるかをあとで確認
         favButton.addTarget(self, action: #selector(favButtonTap(_:)), for: .touchUpInside)
@@ -85,6 +96,50 @@ class SelectMusicViewController: UIViewController,UITableViewDelegate,UITableVie
         playButton.addTarget(self, action: #selector(playButtonTap(_:)), for: .touchUpInside)
         playButton.tag = indexPath.row
         return cell
+        
+    }
+    
+    
+    @objc func favButtonTap(_ sender:UIButton) {
+        
+        //音声が流れていたら、止める
+        
+        if player.isPlaying == true {
+            player.stop()
+        }
+        
+        //動画と音声を合成する。合成中は、一定時間がかかるため、その間はロード画面を表示させる。
+        
+        //ロード画面を表示する
+        LoadingView.lockView()
+        
+        //動画と音声を合成する
+        VideoGenerator.fileName = "newAudioMovie"
+        VideoGenerator.current.mergeVideoWithAudio(videoUrl: passedURL!, audioUrl: URL(string: musicModel.preViewURLArray[sender.tag])!) { result in
+            
+            //合成が終了したら、ロード画面を終了する
+            LoadingView.unlockView()
+            
+            //合成が成功したかどうかでswitch文を使用する。
+            switch result{
+            
+            case .success(let url):  //ここのurlに、合成した音楽付きURLが入る
+                
+                self.videoPath = url.absoluteString
+                if let handler = self.resultHandler{
+                    
+                    handler(self.videoPath, self.musicModel.artistNameArray[sender.tag], self.musicModel.trackCensoredNameArray[sender.tag] )
+                    
+                }
+                
+                self.dismiss(animated: true, completion: nil)
+            
+            case .failure(let error):
+                print(error)
+            }
+            
+        }
+    
         
     }
     
@@ -109,7 +164,7 @@ class SelectMusicViewController: UIViewController,UITableViewDelegate,UITableVie
         var downLoadTask:URLSessionDownloadTask
         downLoadTask = URLSession.shared.downloadTask(with: url, completionHandler: { url, response, error in
          
-            print(url)
+            print(url!)
             self.play(url: url!)
         })
         //タスクを再開するために記述。必要はないかも？？

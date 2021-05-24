@@ -112,6 +112,9 @@
                                 <state key="normal" title="次へ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="next:" destination="SPw-9O-8Ly" eventType="touchUpInside" id="tyZ-DL-Ity"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6AW-rB-LgU">
                                 <rect key="frame" x="25" y="581" width="95" height="36"/>
@@ -128,8 +131,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="OIU-9b-HNv"/>
                     <connections>
-                        <segue destination="VpH-ws-EwE" kind="presentation" id="dPU-oV-lc1"/>
-                        <segue destination="xwz-vJ-nIe" kind="show" id="cCg-aD-rey"/>
+                        <segue destination="VpH-ws-EwE" kind="presentation" identifier="selectVC" id="dPU-oV-lc1"/>
+                        <segue destination="xwz-vJ-nIe" kind="show" identifier="shareVC" id="cCg-aD-rey"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kGm-6p-A4A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -193,6 +196,9 @@
                                 <state key="normal" image="magnifyingglass" catalog="system">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="searchButton:" destination="VpH-ws-EwE" eventType="touchUpInside" id="Ehx-i2-Hft"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tQu-gp-cvm"/>
@@ -208,10 +214,10 @@
             </objects>
             <point key="canvasLocation" x="3170.4000000000001" y="114.69265367316342"/>
         </scene>
-        <!--View Controller-->
+        <!--Share View Controller-->
         <scene sceneID="0Uu-1c-mhY">
             <objects>
-                <viewController id="xwz-vJ-nIe" customClass="ViewController" customModule="tiktok" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="shareVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xwz-vJ-nIe" customClass="ShareViewController" customModule="tiktok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xzv-Rt-wNk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

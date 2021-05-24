@@ -9,15 +9,20 @@ import UIKit
 import AVKit //これを用いて、バックに動画のプレビューを再生する。
 
 class EditViewController: UIViewController {
-
-    var url:URL? = nil
+    
+    //撮影もしくは選択した動画URlが入ってきてる。
+    var url:URL?
     
     //ライブラリのAVkitがあると使用可能。動画再生用にインスタンス化
     var playerController:AVPlayerViewController?
     var player:AVPlayer?
     
+    //selectVCで選択した楽曲名とアーティスト名を保持するため
+    var captionString = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUPvideoPlayer(url: url!)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -87,19 +92,58 @@ class EditViewController: UIViewController {
     
     //動画の再生時間が終わったときに、呼ばれるメソッド
     @objc func playerItemDidReachEnd() {
-        self.player?.seek(to: CMTime.zero)
-        self.player?.volume = 1
-        self.player?.play()
+        
+        if self.player != nil {
+            
+            self.player?.seek(to: CMTime.zero)
+            self.player?.volume = 1
+            self.player?.play()
+        }
+        
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "selectVC" {
+            let selectVC = segue.destination as! SelectMusicViewController
+            selectVC.passedURL = url
+            
+            //Dispatchを使用することによって、画面遷移が行わレた後も、ここの判定が継続して行われるようになる
+            //あとで、dispatchを消しても同じような処理が行われるかどうかを確認する
+            DispatchQueue.global().async {
+                //クロージャを用いることによって、selectVC側でresultHundlerの値が入るまではここの処理が呼ばれない
+                selectVC.resultHandler = {
+                    url,text1,text2 in
+                    
+                    //入ってきた動画URLを使用し、作成された動画を流す。
+                    self.setUPvideoPlayer(url: URL(string: url)!)
+                    self.captionString = text1 + "\n" + text2
+                }
+            }
+            
+        }
+        
+        if segue.identifier == "shareVC"{
+            let shareVC = segue.destination as! ShareViewController
+            shareVC.captionString = self.captionString
+            
+        }
+        
     }
-    */
-
+    
+    
+    @IBAction func next(_ sender: Any) {
+        //        if captionString.isEmpty != true {
+        performSegue(withIdentifier: "shareVC", sender: nil)
+        //        }else{
+        //            print("楽曲を選択してください")
+        //        }
+        
+    }
+    
+    
+    
+    
+    
 }
