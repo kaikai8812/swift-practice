@@ -98,7 +98,7 @@ class SelectMusicViewController: UIViewController,UITableViewDelegate,UITableVie
         
         //favボタンを、プログラムで作成(選択した音楽と、動画を合成して、EditViewControllerに返す。)
         let favButton = UIButton(frame: CGRect(x: 293, y: 33, width: 53, height: 53))
-        favButton.setImage(UIImage(named: "play"), for: .normal) //ここのnormal、変えるとどうなるかをあとで確認
+        favButton.setImage(UIImage(named: "fav"), for: .normal) //ここのnormal、変えるとどうなるかをあとで確認
         favButton.addTarget(self, action: #selector(favButtonTap(_:)), for: .touchUpInside)
         favButton.tag = indexPath.row
         cell.contentView.addSubview(favButton)
@@ -107,7 +107,10 @@ class SelectMusicViewController: UIViewController,UITableViewDelegate,UITableVie
         let playButton = UIButton(frame: CGRect(x: 16, y: 10, width: 100, height: 100))
         playButton.setImage(UIImage(named: "play"), for: .normal)
         playButton.addTarget(self, action: #selector(playButtonTap(_:)), for: .touchUpInside)
+        
         playButton.tag = indexPath.row
+//        playButton.layer.zPosition = 1.0
+        cell.contentView.addSubview(playButton)
         return cell
         
     }
@@ -175,6 +178,11 @@ class SelectMusicViewController: UIViewController,UITableViewDelegate,UITableVie
         
         //タップしたセルのindexpath.rowを、senderを使用してこっちでも使用している。
         let url = URL(string:musicModel.preViewURLArray[sender.tag])
+        print("kai")
+        print(sender.tag)
+        print("kai")
+        print(musicModel.preViewURLArray[sender.tag])
+        print("kai")
         downLoadMusicURL(url: url!)
     }
 
@@ -199,13 +207,16 @@ class SelectMusicViewController: UIViewController,UITableViewDelegate,UITableVie
             player = try AVAudioPlayer(contentsOf: url)
             player.prepareToPlay()
             player.volume = 1.0
+            print("kai")
+            print(url)
+            print("kai")
             player.play()
             
         } catch let error as NSError {
             print(error.debugDescription)
         }
     }
-
+//
     /*
     // MARK: - Navigation
 

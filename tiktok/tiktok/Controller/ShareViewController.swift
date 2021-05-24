@@ -16,6 +16,7 @@ class ShareViewController: UIViewController {
     
     //editVCから、選択した音楽の情報と、合成した動画URLを取得する
     var captionString = String()
+    //音声データも入っているものだと確認済み
     var passedURL = String()
     
     //動画再生用
@@ -41,6 +42,8 @@ class ShareViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        print(passedURL)
+        print("kai")
         //完成されたURL（passedURL）を使用して、動画を再生する
         setUPvideoPlayer(url: URL(string: passedURL)!)
     }
@@ -71,6 +74,9 @@ class ShareViewController: UIViewController {
         //初期化しなかったらどうなるのか、確認すること。
         playerController?.removeFromParent()
         player = nil
+        player = AVPlayer(url: url)
+        player?.volume = 1.0
+        
         view.backgroundColor = .black
         
         //すでに宣言はしているが、メモリを確保するために再度宣言を行う???
@@ -78,7 +84,8 @@ class ShareViewController: UIViewController {
         //ビデオをどのようなサイズ感で行うかを設定
         playerController?.videoGravity = .resizeAspectFill
         //動画再生の位置、大きさをここで指定する
-        playerController?.view.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height - 100)
+        playerController?.view.frame = CGRect(x: 23, y: 72, width: view.frame.size.width - 100, height: view.frame.size.height - 260)
+        playerController?.view.backgroundColor = .green
         //再生のシークバー的なやつだと思われる。あとでtrueにして確認
         playerController?.showsPlaybackControls = false
         //plawerControllerが持つobjectであるplayerの設定をしている。

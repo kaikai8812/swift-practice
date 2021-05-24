@@ -51,6 +51,9 @@ class MusicModel {
                         self.trackCensoredNameArray.append(json["results"][i]["trackCensoredName"].string!)
                         self.preViewURLArray.append(json["results"][i]["previewUrl"].string!)
                         self.artWorkUrl100Array.append(json["results"][i]["artworkUrl100"].string!)
+                        print("kai")
+                        print(json["results"][i]["previewUrl"].string!)
+                        print("kai")
                     }
                     
                     //ここでデリゲートメソッドを作成し、他のコントローラに処理をさせる。
