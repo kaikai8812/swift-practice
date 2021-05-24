@@ -20,6 +20,10 @@ class EditViewController: UIViewController {
     //selectVCで選択した楽曲名とアーティスト名を保持するため
     var captionString = String()
     
+    //selectVCで作成した動画データを、受け取るため
+    var passedURL = String()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUPvideoPlayer(url: url!)
@@ -66,7 +70,6 @@ class EditViewController: UIViewController {
         //selecter = 行うメソッド name = どうゆうタイミングか object:対象は何なのか　を、指定する。
         NotificationCenter.default.addObserver(self, selector: #selector(playerItemDidReachEnd), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: self.player?.currentItem)
         
-        
         //キャンセルボタンを、プログラムで作成する
         //UIButtonのインスタンス化と、位置、大きさを作成する。
         let cancelButton = UIButton(frame: CGRect(x: 10.0, y: 10.0, width: 30.0, height: 30.0))
@@ -91,7 +94,7 @@ class EditViewController: UIViewController {
     }
     
     //動画の再生時間が終わったときに、呼ばれるメソッド
-    @objc func playerItemDidReachEnd() {
+    @objc func playerItemDidReachEnd(_ notification:Notification) {
         
         if self.player != nil {
             
@@ -119,14 +122,16 @@ class EditViewController: UIViewController {
                     //入ってきた動画URLを使用し、作成された動画を流す。
                     self.setUPvideoPlayer(url: URL(string: url)!)
                     self.captionString = text1 + "\n" + text2
+                    self.passedURL = url
                 }
             }
-            
         }
         
+        //shareVCに遷移する場合は、合成済み動画データと音楽情報を遷移先にわたす。
         if segue.identifier == "shareVC"{
             let shareVC = segue.destination as! ShareViewController
             shareVC.captionString = self.captionString
+            shareVC.passedURL = passedURL
             
         }
         
@@ -134,11 +139,18 @@ class EditViewController: UIViewController {
     
     
     @IBAction func next(_ sender: Any) {
-        //        if captionString.isEmpty != true {
+                //音楽合成済みの動画データがない場合は、遷移ができない。
+                if captionString.isEmpty != true {
         performSegue(withIdentifier: "shareVC", sender: nil)
-        //        }else{
-        //            print("楽曲を選択してください")
-        //        }
+                }else{
+                    print("楽曲を選択してください")
+                }
+    }
+    
+    
+    @IBAction func showSelectVC(_ sender: Any) {
+        
+        performSegue(withIdentifier: "selectVC", sender: nil)
         
     }
     

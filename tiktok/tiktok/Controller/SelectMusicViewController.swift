@@ -57,7 +57,10 @@ class SelectMusicViewController: UIViewController,UITableViewDelegate,UITableVie
             //キーボードを閉じる
             searchTextField.resignFirstResponder()
         }
-        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -99,6 +102,14 @@ class SelectMusicViewController: UIViewController,UITableViewDelegate,UITableVie
         
     }
     
+    //キーボードのreturnが押されたときの処理
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        refleshData()
+        searchTextField.resignFirstResponder()
+        
+        return true
+    }
     
     @objc func favButtonTap(_ sender:UIButton) {
         
