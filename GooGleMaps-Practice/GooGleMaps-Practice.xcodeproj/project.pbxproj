@@ -15,6 +15,7 @@
 		6C1416DB26665AFD00C7E436 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C1416D926665AFD00C7E436 /* LaunchScreen.storyboard */; };
 		6C1416E326676E4900C7E436 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1416E226676E4900C7E436 /* MapViewController.swift */; };
 		6C1416E526676ED200C7E436 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1416E426676ED200C7E436 /* SearchViewController.swift */; };
+		6CFC2BDD2667893E00081E15 /* GeocodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFC2BDC2667893E00081E15 /* GeocodeModel.swift */; };
 		C48865B45F334E2847C846AC /* Pods_GooGleMaps_Practice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC79BA05726C352C6E54C6F7 /* Pods_GooGleMaps_Practice.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		6C1416DC26665AFD00C7E436 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C1416E226676E4900C7E436 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		6C1416E426676ED200C7E436 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		6CFC2BDC2667893E00081E15 /* GeocodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodeModel.swift; sourceTree = "<group>"; };
 		7465AF3530FC35DCF97DE7AB /* Pods-GooGleMaps-Practice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GooGleMaps-Practice.debug.xcconfig"; path = "Target Support Files/Pods-GooGleMaps-Practice/Pods-GooGleMaps-Practice.debug.xcconfig"; sourceTree = "<group>"; };
 		C932111C9430E6EB1F8BF1DE /* Pods-GooGleMaps-Practice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GooGleMaps-Practice.release.xcconfig"; path = "Target Support Files/Pods-GooGleMaps-Practice/Pods-GooGleMaps-Practice.release.xcconfig"; sourceTree = "<group>"; };
 		EC79BA05726C352C6E54C6F7 /* Pods_GooGleMaps_Practice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GooGleMaps_Practice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +78,7 @@
 		6C1416CD26665AFA00C7E436 /* GooGleMaps-Practice */ = {
 			isa = PBXGroup;
 			children = (
+				6CFC2BDB2667892900081E15 /* Model */,
 				6C1416CE26665AFA00C7E436 /* AppDelegate.swift */,
 				6C1416D026665AFA00C7E436 /* SceneDelegate.swift */,
 				6C1416D226665AFA00C7E436 /* ViewController.swift */,
@@ -87,6 +90,14 @@
 				6C1416E426676ED200C7E436 /* SearchViewController.swift */,
 			);
 			path = "GooGleMaps-Practice";
+			sourceTree = "<group>";
+		};
+		6CFC2BDB2667892900081E15 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6CFC2BDC2667893E00081E15 /* GeocodeModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		B8867EA89A0F1DA1B3149712 /* Frameworks */ = {
@@ -211,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CFC2BDD2667893E00081E15 /* GeocodeModel.swift in Sources */,
 				6C1416E526676ED200C7E436 /* SearchViewController.swift in Sources */,
 				6C1416D326665AFA00C7E436 /* ViewController.swift in Sources */,
 				6C1416CF26665AFA00C7E436 /* AppDelegate.swift in Sources */,

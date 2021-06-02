@@ -9,38 +9,30 @@ import UIKit
 import MapKit
 import GoogleMaps
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, GetCoordinate {
+
+    
     
     var address = String()
     var latitude = Double()
     var longitude = Double()
-    
+    var geocodeModel = GeocodeModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //住所を座標に変換
-        CLGeocoder().geocodeAddressString(address) { placemarks, error in
-            
-            //緯度を変数に保存
-            if let lat = placemarks?.first?.location?.coordinate.latitude {
-                self.latitude = lat
-                print("緯度 : \(lat)")
-            }
-            
-            //経度を変数に保存
-            if let lng = placemarks?.first?.location?.coordinate.longitude {
-                self.longitude = lng
-                print("経度 : \(lng)")
-                print("")
-            }
-        }
         
+        geocodeModel.getCoordinate = self
         
+        geocodeModel.geocode(address: address)
+        
+    }
+    
+    //デリゲートメソッドを用いて、住所が座標に返還された後に、GoogleMapに反映させるように処理をおこなう。
+    func getCoordinateData(latitude: Double, longitude: Double) {
         print(latitude)
         print(longitude)
         print("")
-        //ここから、googleMapsの記述
         
         GMSServices.provideAPIKey("AIzaSyBW1Tc5IvfPjm_3x-v7CRIQ3z2MLZNqYhM")
         
@@ -53,32 +45,33 @@ class MapViewController: UIViewController {
         
         marker.title = address
         marker.map = mapView
-
         
     }
+    
+
     
     
     //住所を井戸、経度に変換する関数
-    func geocode(address:String) {
-        
-        CLGeocoder().geocodeAddressString(address) { placemarks, error in
-            
-            //緯度を変数に保存
-            if let lat = placemarks?.first?.location?.coordinate.latitude {
-                self.latitude = lat
-                print("緯度 : \(lat)")
-            }
-            
-            //経度を変数に保存
-            if let lng = placemarks?.first?.location?.coordinate.longitude {
-                self.longitude = lng
-                print("経度 : \(lng)")
-                print("")
-            }
-            
-        }
-        
-    }
+//    func geocode(address:String) {
+//
+//        CLGeocoder().geocodeAddressString(address) { placemarks, error in
+//
+//            //緯度を変数に保存
+//            if let lat = placemarks?.first?.location?.coordinate.latitude {
+//                self.latitude = lat
+//                print("緯度 : \(lat)")
+//            }
+//
+//            //経度を変数に保存
+//            if let lng = placemarks?.first?.location?.coordinate.longitude {
+//                self.longitude = lng
+//                print("経度 : \(lng)")
+//                print("")
+//            }
+//
+//        }
+//
+//    }
     
 
 }
