@@ -25,7 +25,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
         GMSServices.provideAPIKey("AIzaSyBW1Tc5IvfPjm_3x-v7CRIQ3z2MLZNqYhM")
         
         //ここで、マップ表示時の位置を決めている
-        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
+        let camera = GMSCameraPosition.camera(withLatitude: 35.689506, longitude: 139.6917, zoom: 6.0)
         let mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
         self.view.addSubview(mapView)
         

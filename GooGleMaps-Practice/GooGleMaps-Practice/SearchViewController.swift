@@ -27,6 +27,8 @@ class SearchViewController: UIViewController {
         
         mapVC.address = textField.text!
         
+        navigationController?.pushViewController(mapVC, animated: true)
+        
     }
     /*
     // MARK: - Navigation
