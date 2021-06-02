@@ -64,4 +64,6 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
 }
 
 
-//やりたいこと =>
+//やりたいこと => お店の位置を登録　=> 位置情報をタップしたら、そこのお店にマーカーがついて、名前とかが表示されるようにする。
+//そのためには、住所と座標を変換するプログラムが必要
+//fireStoreには、住所で保存
