@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseFirestore
+import ActiveLabel
 
 class TableViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
@@ -38,10 +39,26 @@ class TableViewController: UIViewController,UITableViewDelegate, UITableViewData
         
         //storyBoard上のセルと、紐付けを行なっています。
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let textLabel = cell.contentView.viewWithTag(1) as! UILabel
+        let textLabel = cell.contentView.viewWithTag(1) as! ActiveLabel   // ActiveLabelに変更する
         
         //取得してきた文字列をセルに反映しています。
         textLabel.text = textArray[indexPath.row]
+        
+        //ハッシュタグをタップしたらどうなるかの処理を追加記述 ==============================
+        
+        textLabel.handleHashtagTap { hashTag in
+            
+            //storyBoard上のhashTagViewControllerをインスタンス化
+            let hashVC = self.storyboard?.instantiateViewController(identifier: "hashVC") as! HashTagViewController
+            
+            //hashVCへ、タップしたハッシュタグの情報を渡す
+            hashVC.hashTag = hashTag
+            
+            //画面遷移
+            self.navigationController?.pushViewController(hashVC, animated: true)
+        }
+        
+        //ハッシュタグをタップしたらどうなるかの処理を追加記述 ==============================
         
         return cell
     }
