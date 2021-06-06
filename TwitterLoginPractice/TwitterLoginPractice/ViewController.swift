@@ -6,14 +6,46 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestore
+import FirebaseAuth
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, AuthUIDelegate {
+    
+    var provider = OAuthProvider(providerID: "twitter.com")
 
+    var auth = AuthUIDelegate.self
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        provider.customParameters = ["lang": "ja"]
+        
     }
 
+    @IBAction func login(_ sender: Any) {
+        
+        provider.getCredentialWith(nil) { credential, error in
 
+            if error != nil {
+                print(error.debugDescription)
+                return
+            }
+            
+            if credential != nil {
+                Auth.auth().signIn(with: credential!) { authResult, error in
+                    if error != nil {
+                        print(error.debugDescription)
+                        return
+                    }
+                }
+            }
+        }
+        
+        performSegue(withIdentifier: "next", sender: nil)
+        
+        
+    }
+    
 }
 
