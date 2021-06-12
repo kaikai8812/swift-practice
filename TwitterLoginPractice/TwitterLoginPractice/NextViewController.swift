@@ -15,6 +15,16 @@ class NextViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         label.text = Auth.auth().currentUser?.uid
+        userName.text = Auth.auth().currentUser?.displayName
+  
     }
-
+    
+    
+    let URL:URL = (Auth.auth().currentUser?.photoURL)!
+    
+    @IBOutlet weak var userName: UILabel!
+    
+    @IBOutlet weak var profile: UILabel!
+    
+    
 }

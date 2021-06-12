@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 import FirebaseAuth
+import Swifter
 
 class ViewController: UIViewController, AuthUIDelegate {
     
