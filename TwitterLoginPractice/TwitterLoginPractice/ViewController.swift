@@ -33,6 +33,9 @@ class ViewController: UIViewController, AuthUIDelegate {
             }
             
             if credential != nil {
+                
+                
+                
                 Auth.auth().signIn(with: credential!) { authResult, error in
                     if error != nil {
                         print(error.debugDescription)

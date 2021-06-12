@@ -10,4 +10,5 @@ target 'TwitterLoginPractice' do
 pod 'Firebase'
 pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
+pod 'Swifter', :git => 'https://github.com/mattdonnelly/Swifter.git'
 end
